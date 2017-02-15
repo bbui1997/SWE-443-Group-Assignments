@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cs443bjmsv.iml" filepath="$PROJECT_DIR$/.idea/modules/cs443bjmsv.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cs443bjmsv_main.iml" filepath="$PROJECT_DIR$/.idea/modules/cs443bjmsv_main.iml" group="cs443bjmsv" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cs443bjmsv_test.iml" filepath="$PROJECT_DIR$/.idea/modules/cs443bjmsv_test.iml" group="cs443bjmsv" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mancala/mancala.iml" filepath="$PROJECT_DIR$/.idea/modules/mancala/mancala.iml" group="mancala" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mancala/mancala_main.iml" filepath="$PROJECT_DIR$/.idea/modules/mancala/mancala_main.iml" group="mancala" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mancala/mancala_test.iml" filepath="$PROJECT_DIR$/.idea/modules/mancala/mancala_test.iml" group="mancala" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/swe443.iml" filepath="$PROJECT_DIR$/.idea/modules/swe443.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/swe443_main.iml" filepath="$PROJECT_DIR$/.idea/modules/swe443_main.iml" group="swe443" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/swe443_test.iml" filepath="$PROJECT_DIR$/.idea/modules/swe443_test.iml" group="swe443" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/towerofhanoi/towerofhanoi.iml" filepath="$PROJECT_DIR$/.idea/modules/towerofhanoi/towerofhanoi.iml" group="towerofhanoi" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/towerofhanoi/towerofhanoi_main.iml" filepath="$PROJECT_DIR$/.idea/modules/towerofhanoi/towerofhanoi_main.iml" group="towerofhanoi" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/towerofhanoi/towerofhanoi_test.iml" filepath="$PROJECT_DIR$/.idea/modules/towerofhanoi/towerofhanoi_test.iml" group="towerofhanoi" />
     </modules>
   </component>
 </project>

@@ -4,6 +4,14 @@
     <bytecodeTargetLevel>
       <module name="cs443bjmsv_main" target="1.8" />
       <module name="cs443bjmsv_test" target="1.8" />
+      <module name="mancala_main" target="1.8" />
+      <module name="mancala_test" target="1.8" />
+      <module name="swe443_main" target="1.8" />
+      <module name="swe443_test" target="1.8" />
+      <module name="test_main" target="1.5" />
+      <module name="test_test" target="1.5" />
+      <module name="towerofhanoi_main" target="1.8" />
+      <module name="towerofhanoi_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

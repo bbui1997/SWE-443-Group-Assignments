@@ -1,2 +1,3 @@
-rootProject.name = 'cs443bjmsv'
+include 'towerofhanoi'
+include 'mancala'
 
