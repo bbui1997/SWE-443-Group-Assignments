@@ -6,8 +6,12 @@
       <module name="cs443bjmsv_test" target="1.8" />
       <module name="mancala_main" target="1.8" />
       <module name="mancala_test" target="1.8" />
+      <module name="SWE-443-Group-Assignments_main" target="1.8" />
+      <module name="SWE-443-Group-Assignments_test" target="1.8" />
       <module name="swe443_main" target="1.8" />
       <module name="swe443_test" target="1.8" />
+      <module name="swe443group_main" target="1.8" />
+      <module name="swe443group_test" target="1.8" />
       <module name="test_main" target="1.5" />
       <module name="test_test" target="1.5" />
       <module name="towerofhanoi_main" target="1.8" />

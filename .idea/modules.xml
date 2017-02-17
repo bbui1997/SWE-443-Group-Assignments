@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SWE-443-Group-Assignments.iml" filepath="$PROJECT_DIR$/.idea/modules/SWE-443-Group-Assignments.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SWE-443-Group-Assignments_main.iml" filepath="$PROJECT_DIR$/.idea/modules/SWE-443-Group-Assignments_main.iml" group="SWE-443-Group-Assignments" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SWE-443-Group-Assignments_test.iml" filepath="$PROJECT_DIR$/.idea/modules/SWE-443-Group-Assignments_test.iml" group="SWE-443-Group-Assignments" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/mancala/mancala.iml" filepath="$PROJECT_DIR$/.idea/modules/mancala/mancala.iml" group="mancala" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mancala/mancala_main.iml" filepath="$PROJECT_DIR$/.idea/modules/mancala/mancala_main.iml" group="mancala" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mancala/mancala_test.iml" filepath="$PROJECT_DIR$/.idea/modules/mancala/mancala_test.iml" group="mancala" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/swe443.iml" filepath="$PROJECT_DIR$/.idea/modules/swe443.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/swe443_main.iml" filepath="$PROJECT_DIR$/.idea/modules/swe443_main.iml" group="swe443" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/swe443_test.iml" filepath="$PROJECT_DIR$/.idea/modules/swe443_test.iml" group="swe443" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/towerofhanoi/towerofhanoi.iml" filepath="$PROJECT_DIR$/.idea/modules/towerofhanoi/towerofhanoi.iml" group="towerofhanoi" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/towerofhanoi/towerofhanoi_main.iml" filepath="$PROJECT_DIR$/.idea/modules/towerofhanoi/towerofhanoi_main.iml" group="towerofhanoi" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/towerofhanoi/towerofhanoi_test.iml" filepath="$PROJECT_DIR$/.idea/modules/towerofhanoi/towerofhanoi_test.iml" group="towerofhanoi" />
     </modules>
   </component>
 </project>

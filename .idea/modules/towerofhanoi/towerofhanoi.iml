@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":towerofhanoi" external.linked.project.path="$MODULE_DIR$/../../../towerofhanoi" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="SWE-443-Group-Assignments" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../towerofhanoi">
+      <excludeFolder url="file://$MODULE_DIR$/../../../towerofhanoi/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../towerofhanoi/build" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
