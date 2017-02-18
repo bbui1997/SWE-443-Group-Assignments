@@ -50,6 +50,6 @@ public class MancalaGameTests {
 
     @Test void takeOppositePebblesTest(){
 
-
+    System.out.println("does this work");
     }
 }
