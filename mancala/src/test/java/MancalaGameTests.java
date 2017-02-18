@@ -47,4 +47,9 @@ public class MancalaGameTests {
         assertTrue("game shouldn't contain player", !game.getPlayers().contains(p2));
         assertTrue("p2.game should be null", p2.getGame() == null);
     }
+
+    @Test void takeOppositePebblesTest(){
+
+
+    }
 }
