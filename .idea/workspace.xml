@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6aa49e85-027e-41bd-8022-230074036a52" name="Default" comment="wrote peg class, and used a Stack structure instead of a Arraylist structure, can discuss when we get together @Marcus and @Sam">
+    <list default="true" id="6aa49e85-027e-41bd-8022-230074036a52" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/towerofhanoi/src/main/java/Peg.java" afterPath="$PROJECT_DIR$/towerofhanoi/src/main/java/Peg.java" />
     </list>
     <ignored path="SWE-443-Group-Assignments.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1051,7 +1050,7 @@
       <workItem from="1487493022978" duration="2970000" />
       <workItem from="1487535166722" duration="167000" />
       <workItem from="1487535364118" duration="1369000" />
-      <workItem from="1487537501490" duration="3832000" />
+      <workItem from="1487537501490" duration="3842000" />
     </task>
     <task id="LOCAL-00001" summary="testing intellij push and commit">
       <created>1487536562146</created>
@@ -1060,11 +1059,18 @@
       <option name="project" value="LOCAL" />
       <updated>1487536562146</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="wrote peg class, and used a Stack structure instead of a Arraylist structure, can discuss when we get together @Marcus and @Sam">
+      <created>1487542271931</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1487542271931</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8338000" />
+    <option name="totallyTimeSpent" value="8348000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
