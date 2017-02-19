@@ -1,5 +1,5 @@
 /**
- * Created by delta on 2/18/2017.
+ * PegBoard Class
  */
 import java.util.ArrayList;
 
@@ -43,6 +43,40 @@ public class PegBoard {
             return true;
         }
 
+        return false;
+    }
+
+    //Remove a disk from the board
+    public boolean removeDisk(Disk disk){
+        if(disk==null){ //check for null param
+            throw new IllegalArgumentException("NULL disk object");
+        }
+
+        if(this.disks.isEmpty()){ //check for empty disk array
+            throw new IllegalStateException("No disks exists");
+        }
+
+        if(this.disks.remove(disk)){ //remove disk from arraylist
+            this.numberOfDisks--;
+            return true;
+        }
+        return false;
+    }
+
+    //Remove a peg from the board
+    public boolean removePeg(Peg peg){
+        if(peg==null){ //check for null param
+            throw new IllegalArgumentException("NULL peg object");
+        }
+
+        if(this.pegs.isEmpty()){
+            throw new IllegalStateException("No pegs exists");
+        }
+
+        if(this.pegs.remove(peg)){
+            this.numberOfPegs--;
+            return true;
+        }
         return false;
     }
 
