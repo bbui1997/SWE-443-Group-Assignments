@@ -9,6 +9,7 @@ import java.util.LinkedList;
 
     // Upgrading relationship from 1 to 1 to 0..1 to 0..1
 public class Board {
+    // testing push
     private LinkedList<House> leftHouses = new LinkedList<House>();
     private LinkedList<House> rightHouses = new LinkedList<House>();
     private Store leftStore;
