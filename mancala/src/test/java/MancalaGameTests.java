@@ -48,7 +48,8 @@ public class MancalaGameTests {
         assertTrue("p2.game should be null", p2.getGame() == null);
     }
 
-    @Test void takeOppositePebblesTest(){
+    @Test
+    public void takeOppositePebblesTest(){
 
     System.out.println("does this work");
     }
