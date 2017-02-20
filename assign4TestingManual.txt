@@ -1,0 +1,13 @@
+SWE 443
+Assignment 4 Testing Manual
+Brandon Bui
+Jessica Miers
+Sam Luu
+Marcus Yarbrough
+Victor Nguyen
+
+To start the tests for the individual projects, simply open one of the files in
+the src/test/java directories. Once you do that, the whole project should appear
+on IntelliJ. From there, you can either right click the test/java folder or the
+test file itself and click "Run All Tests" or "Run [filename]". All of our tests
+for each project are in one file in their corresponding project.

@@ -1,6 +1,7 @@
-import org.junit.*;
-import static org.junit.Assert.*;
-import org.junit.rules.*;
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.assertTrue;
 
 public class TestDiskMove{
 
@@ -44,16 +45,13 @@ public class TestDiskMove{
         assertTrue(one.move(b));
     }
 
-    @Rule
-    public ExpectedException thrown = ExpectedException.none();
 
     /*
      * Test moving a large object on top of a smaller object.
      * Throws IllegalStateException.
      */
-    @Test
+    @Test (expected = IllegalStateException.class)
     public void testMoveException(){
-        thrown.expect(IllegalStateException.class);
         one.move(b);
         two.move(b);
     }
