@@ -59,7 +59,7 @@ public class House {
         }
 
     }
-
+    //Recursive
     public void redistributeCounterClockwise() {
         this.next.redistributeCounterClockwiseRecurse(this.pebbles);
         this.pebbles = 0;
