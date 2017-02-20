@@ -1,9 +1,14 @@
-/**
- * Created by bbui1 on 2/16/2017.
- */
+import java.util.Collections;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
+import java.util.Set;
+
+
 public class Player {
     private String name;
     private MancalaGame game;
+   // private House store;          To be implemented later
+    //private LinkedList<House> myhouses;  To be implemented later
 
     public String getName() {
         return name;

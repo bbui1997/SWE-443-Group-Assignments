@@ -1,9 +1,42 @@
-/**
- * Created by bbui1 on 2/16/2017.
- */
+
 public class House {
     private int pebbles;
-    private Board board;
+    private boolean isStore = false;
+    private House next;
+    private House across;
+    private House store;
+
+    public void setStore(House house){
+        this.store = house;
+    }
+    public House getStore(House house){
+        return this.store;
+    }
+    public void setNext(House house){
+        this.next = house;
+    }
+    public void setAcross(House house){
+        this.across = house;
+
+    }
+    public House getNext(){
+        return this.next;
+    }
+    public House getAcross(){
+        return this.across;
+    }
+
+    public boolean getIsStore(){
+        return this.isStore;
+    }
+
+    public House getStore(){
+        return this.store;
+    }
+
+    public void setStore(boolean val){
+        this.isStore = true;
+    }
 
     public int getPebbles() {
         return pebbles;
@@ -14,21 +47,29 @@ public class House {
         this.pebbles = num;
     }
 
-    public Board getBoard() {
-        return board;
-    }
 
-    public void setBoard(Board board) {
-        this.board = board;
-    }
 
     public void takeOppositePebbles(){
-
+        if (this.isStore) {
+            throw new IllegalStateException("Cannot take opposite pebbles from a store");
+        }
+        else {
+            this.store.setPebbles(this.across.getPebbles()+this.store.getPebbles());
+            this.across.setPebbles(0);
+        }
 
     }
 
-    public void redistributeCounterClockwise(House h) {
+    public void redistributeCounterClockwise() {
+        this.next.redistributeCounterClockwiseRecurse(this.pebbles);
+        this.pebbles = 0;
 
+    }
+    public void redistributeCounterClockwiseRecurse(int pebbles_in_hand) {
+        if (pebbles_in_hand != 0) {
+            this.pebbles += 1;
+            this.next.redistributeCounterClockwiseRecurse(pebbles_in_hand - 1);
 
+        }
     }
 }
