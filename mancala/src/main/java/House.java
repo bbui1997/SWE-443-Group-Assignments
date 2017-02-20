@@ -61,15 +61,19 @@ public class House {
     }
     //Recursive
     public void redistributeCounterClockwise() {
-        this.next.redistributeCounterClockwiseRecurse(this.pebbles);
+        this.next.redistributeCounterClockwiseRecurse(this.pebbles, this.store);
         this.pebbles = 0;
 
     }
-    public void redistributeCounterClockwiseRecurse(int pebbles_in_hand) {
-        if (pebbles_in_hand != 0) {
-            this.pebbles += 1;
-            this.next.redistributeCounterClockwiseRecurse(pebbles_in_hand - 1);
+    public void redistributeCounterClockwiseRecurse(int pebbles_in_hand, House store) {
+        if (this.getIsStore() && this != store) {
+            this.next.redistributeCounterClockwiseRecurse(pebbles_in_hand, store);
 
         }
+            if (pebbles_in_hand != 0) {
+                this.pebbles += 1;
+                this.next.redistributeCounterClockwiseRecurse(pebbles_in_hand - 1, store);
+            }
     }
 }
+

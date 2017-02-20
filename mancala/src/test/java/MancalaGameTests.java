@@ -8,7 +8,6 @@ import static org.junit.Assert.*;
 public class MancalaGameTests {
     MancalaGame game;
     Player p1, p2;
-    Board board;
 
     public void setUpScenario1(){
         game = new MancalaGame(6);
