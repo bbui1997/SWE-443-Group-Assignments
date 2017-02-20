@@ -1,5 +1,5 @@
 /**
- * Created by delta on 2/18/2017.
+ * Disk Class
  */
 public class Disk {
     private int diskSize;
@@ -15,15 +15,15 @@ public class Disk {
 
 
     /* GETTER AND SETTER METHODS FOR VARIABLE diskSize */
-    public int getDiskSize() {
+    public int getDiskSize() throws IllegalArgumentException {
         return this.diskSize;
     }
-    public void setDiskSize(int diskSize) {
+
+    public void setDiskSize(int diskSize) throws IllegalArgumentException {
         if (diskSize < 1)
             throw new IllegalArgumentException("diskSize cannot be less than 1");
         this.diskSize = diskSize;
     }
-
 
     /* GETTER AND SETTER METHODS FOR VARIABLE diskNumber */
     public int getDiskNumber() {
@@ -40,14 +40,34 @@ public class Disk {
     public Peg getCurrentPeg() {
         return this.currentPeg;
     }
+
     public void setCurrentPeg(Peg newPeg) {
-        if (this.currentPeg != newPeg) {
-            Peg prevPeg = this.currentPeg;
-            this.currentPeg = newPeg;
-            if (prevPeg != null);
-                //prevPeg.pop(this);
-            if (this.currentPeg != null);
-                //prevPeg.push(this);        // I was thinking about have each peg object contain a stack (data structure) of disks
+        this.currentPeg = newPeg;
+        newPeg.putDiskOntoPeg(this);
+    }
+
+    /* Move disk onto a peg */
+    public boolean move(Peg peg) throws IllegalStateException{
+        if(peg == null){ //check if peg object null
+            throw new IllegalArgumentException("NULL peg object");
         }
+
+        //check disk size for proper placement
+        if(!(peg.getDisksOnPeg().isEmpty())){
+            if(this.getDiskSize() > peg.getDisksOnPeg().peek().getDiskSize()) {
+                throw new IllegalStateException("Cannot place onto Peg while current disk is smaller than new Disk");
+            }
+        }
+
+        if (this.currentPeg.getDisksOnPeg().peek() == this) {
+            this.currentPeg.removeTopDisk();	//
+
+            if(peg.putDiskOntoPeg(this)){ //put disk on peg
+                this.setCurrentPeg(peg); //update current peg
+                return true;
+            }
+        }
+
+        return false;
     }
 }

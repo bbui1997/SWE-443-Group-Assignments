@@ -1,13 +1,13 @@
 /**
  * PegBoard Class
  */
-import java.util.ArrayList;
+import java.util.*;
 
 public class PegBoard {
     private int numberOfDisks;
     private int numberOfPegs;
-    private ArrayList<Disk> disks;
-    private ArrayList<Peg> pegs;
+    private List<Disk> disks;
+    private List<Peg> pegs;
 
     //PegBoard Constructor
     public PegBoard(){
@@ -32,7 +32,7 @@ public class PegBoard {
     }
 
     //Add a peg to the board
-    public boolean addPeg(Peg peg){
+    public boolean addPeg(Peg peg) throws IllegalArgumentException{
         if(peg==null){
             throw new IllegalArgumentException("NULL peg object");
         }
@@ -47,7 +47,7 @@ public class PegBoard {
     }
 
     //Remove a disk from the board
-    public boolean removeDisk(Disk disk){
+    public boolean removeDisk(Disk disk) throws IllegalArgumentException{
         if(disk==null){ //check for null param
             throw new IllegalArgumentException("NULL disk object");
         }
@@ -64,7 +64,7 @@ public class PegBoard {
     }
 
     //Remove a peg from the board
-    public boolean removePeg(Peg peg){
+    public boolean removePeg(Peg peg) throws IllegalArgumentException,IllegalStateException{
         if(peg==null){ //check for null param
             throw new IllegalArgumentException("NULL peg object");
         }
@@ -91,13 +91,13 @@ public class PegBoard {
     }
 
     //Get disks on board
-    public ArrayList<Disk> getDisks(){
-        return this.disks;
+    public List<Disk> getDisks(){
+        return Collections.unmodifiableList(this.disks);
     }
 
     //Get pegs on board
-    public ArrayList<Peg> getPegs(){
-        return this.pegs;
+    public List<Peg> getPegs(){
+        return Collections.unmodifiableList(this.pegs);
     }
 
 }

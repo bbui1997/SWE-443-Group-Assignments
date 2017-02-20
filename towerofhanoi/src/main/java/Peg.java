@@ -1,44 +1,46 @@
 /*
- * Created by delta on 2/18/2017.
+ * Peg Class
  **/
 
 //import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Stack;
 
 public class Peg {
 
     private String pegPosition;
     private Stack<Disk> disksOnPeg; //used a stack instead of an Arraylist to make things more understandable
-    //public ArrayList<Disk> disksOnPeg;
 
-    public Peg(String peg){
-        this.pegPosition = peg;
+    public Peg(){
+        this.pegPosition = null;
         this.disksOnPeg = new Stack<>();
     }
 
+    public Stack<Disk> getDisksOnPeg() {
+        final Stack<Disk> retVal;
+        return retVal = this.disksOnPeg;
+    }
+
     //GETTERS and SETTERS to get the pegPosition
-    public String getPegPostion(){
+    public String getPegPosition(){
         return this.pegPosition;
     }
 
-    public void setPegPostion(String newPeg){
+    public void setPegPosition(String newPeg) throws NullPointerException{
+        if (newPeg == null) {
+            throw new NullPointerException("newPeg is null");
+        }
         this.pegPosition = newPeg;
     }
 
-    public void putDiskOntoPeg(Disk newDisk){
-        if(disksOnPeg.isEmpty()){
-            disksOnPeg.push((newDisk));
+    public boolean putDiskOntoPeg(Disk newDisk){
+
+        if(disksOnPeg.push(newDisk) == null){
+            return false;
         }
-        else{
-            //this checks the top of the stack to see if the disk is the correct size in in pertaining to the rules of the Tower of Hanoi game
-            if((disksOnPeg.peek().getDiskSize()) < (newDisk.getDiskSize())){
-                throw new IllegalStateException("Cannot place onto Peg while current disk is smaller than new Disk");
-            }
-            else{
-                disksOnPeg.push(newDisk);
-            }
-        }
+        return true;
     }
+
     public void removeTopDisk(){
         this.disksOnPeg.pop();
     }
