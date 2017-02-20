@@ -11,9 +11,9 @@ public class MancalaGameTests {
     Board board;
 
     public void setUpScenario1(){
-        game = new MancalaGame();
+        game = new MancalaGame(6);
         p1 = new Player(); p2 = new Player();
-        board = new Board();
+        //board = new Board();
     }
 
     @Test
@@ -48,9 +48,39 @@ public class MancalaGameTests {
         assertTrue("p2.game should be null", p2.getGame() == null);
     }
 
-    @Test
-    public void takeOppositePebblesTest(){
+    @Test public void takeOppositePebblesTest(){
+        setUpScenario1();
+        p1.setName("Alex");
+        p2.setName("Jess");
+        game.addPlayer(p1);
+        p2.setGame(game);
+        House firstleft = game.getLeftHouses().get(0); //first left house
+        int firstpebbles = firstleft.getStore().getPebbles();
+        int acrosspebbles = firstleft.getAcross().getPebbles();
+        firstleft.takeOppositePebbles();
+        assertTrue("The opposite house should have 0 pebbles", firstleft.getAcross().getPebbles() == 0);
+        assertTrue("Store should have opposite house + current pebbles", firstleft.getStore().getPebbles() == firstpebbles + acrosspebbles);
 
-    System.out.println("does this work");
     }
+    //Scenario
+    @Test public void redistributePebblesTest(){
+        setUpScenario1();
+        p1.setName("Alex");
+        p2.setName("Jess");
+        game.addPlayer(p1);
+        p2.setGame(game);
+        House left = game.getLeftHouses().get(0);
+        left.redistributeCounterClockwise();
+        assertTrue("This house should have 0 pebbles", left.getPebbles() == 0);
+        assertTrue("This house should have 4 pebbles", left.getNext().getPebbles() == 4);
+        assertTrue("This house should have 4 pebbles", left.getNext().getNext().getPebbles() == 4);
+        assertTrue("This house should have 4 pebbles", left.getNext().getNext().getNext().getPebbles() == 4);
+        assertTrue("This house should have 4 pebbles", left.getNext().getNext().getNext().getNext().getPebbles() == 3);
+    }
+
+
+
+
+
+
 }
