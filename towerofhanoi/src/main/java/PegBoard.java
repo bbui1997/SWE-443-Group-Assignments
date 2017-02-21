@@ -3,6 +3,11 @@
  */
 import java.util.*;
 
+/**
+ * author: Marcus Yarbrough
+ * author: Victor Nguyen
+ * author: Sam Luu
+ */
 public class PegBoard {
     private int numberOfDisks;
     private int numberOfPegs;

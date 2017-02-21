@@ -3,6 +3,11 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 
+/**
+ * author: Marcus Yarbrough
+ * author: Victor Nguyen
+ * author: Sam Luu
+ */
 public class TestDiskMove{
 
     PegBoard game;

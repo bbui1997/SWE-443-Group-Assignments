@@ -6,6 +6,11 @@
 import java.util.Collections;
 import java.util.Stack;
 
+/**
+ * author: Marcus Yarbrough
+ * author: Victor Nguyen
+ * author: Sam Luu
+ */
 public class Peg {
 
     private String pegPosition;

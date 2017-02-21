@@ -1,6 +1,11 @@
 /**
  * Disk Class
  */
+/**
+ * author: Marcus Yarbrough
+ * author: Victor Nguyen
+ * author: Sam Luu
+ */
 public class Disk {
     private int diskSize;
     private int diskNumber;
