@@ -6,6 +6,7 @@ apply plugin: 'java'
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
@@ -28,4 +29,5 @@ sourceSets {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile 'org.sdmlib:SDMLib:2.2.+'
 }
