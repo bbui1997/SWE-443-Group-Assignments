@@ -107,5 +107,11 @@ public class MancalaGame {
         return changed;
     }
 
+    //TODO: Implement this function
+    public boolean gameOver(){
+        //check if one side of the board is empty
+        //if it is return true
+        return false;
+    }
 
 }

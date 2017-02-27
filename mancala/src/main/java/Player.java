@@ -15,8 +15,12 @@ import java.util.Set;
 public class Player {
     private String name;
     private MancalaGame game;
-   // private House store;          To be implemented later
+
+    //TODO: FIGURE OUT HOW TO CONNECT A PLAYER TO A STORE AND THEIR OWN SIDE OF THE BOARD
+    // private House store;          To be implemented later
     //private LinkedList<House> myhouses;  To be implemented later
+
+
 
     /**
      * Getters and Setters
@@ -42,5 +46,14 @@ public class Player {
         }
     }
     public MancalaGame getGame(){ return this.game; }
+
+    //TODO: Implement this function
+    public boolean haveWon(){
+        //make a call to gameOver() in MancalaGame to check that the game actually ended
+        //check if you have more pebbles than you're opponent.
+            //return true if so. false if not
+        return false;
+    }
+
 
 }
