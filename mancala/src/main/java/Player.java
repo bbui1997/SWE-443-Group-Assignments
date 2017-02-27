@@ -16,7 +16,7 @@ public class Player {
     private String name;
     private MancalaGame game;
 
-    //TODO: FIGURE OUT HOW TO CONNECT A PLAYER TO A STORE AND THEIR OWN SIDE OF THE BOARD
+    //TODO: FIGURE OUT HOW TO CONNECT A PLAYER TO A STORE AND THEIR OWN SIDE OF THE BOARD. Might need these...
     // private House store;          To be implemented later
     //private LinkedList<House> myhouses;  To be implemented later
 
@@ -52,6 +52,7 @@ public class Player {
         //make a call to gameOver() in MancalaGame to check that the game actually ended
         //check if you have more pebbles than you're opponent.
             //return true if so. false if not
+        //make sure to check for ties. Ties occur when the game is over but there are the same amount of pebbles in each store
         return false;
     }
 

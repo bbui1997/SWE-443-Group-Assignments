@@ -110,7 +110,7 @@ public class MancalaGame {
     //TODO: Implement this function
     public boolean gameOver(){
         //check if one side of the board is empty
-        //if it is return true
+        //if it is return true or false if game is incomplete
         return false;
     }
 
