@@ -1,9 +1,6 @@
-/**
- * PegBoard Class
- */
 import java.util.*;
 
-/**
+/* PegBoard Class
  * author: Marcus Yarbrough
  * author: Victor Nguyen
  * author: Sam Luu

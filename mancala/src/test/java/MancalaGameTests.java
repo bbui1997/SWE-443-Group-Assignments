@@ -16,6 +16,8 @@ public class MancalaGameTests {
     public void setUpScenario1(){
         game = new MancalaGame(6);  //testing a normal mancala board of 12 houses (6 per side)
         p1 = new Player(); p2 = new Player();
+        p1.setName("Brandon");
+        p2.setName("Sam");
     }
 
     /**
@@ -37,13 +39,19 @@ public class MancalaGameTests {
     @Test // Test the bidirectionality of players and game
     public void p1Andp2JoinGameThenBothLeave(){
         setUpScenario1();
+        p1.setName("Brandon");
+        p2.setName("Sam");
         // game adds p1, p2 sets game, should do same thing
         game.addPlayer(p1);
+        for(Player p : game.getPlayers()){
+            System.out.println(p.getName());
+        }
         p2.setGame(game);
-
-        assertTrue("game should contains these players",
-                game.getPlayers().contains(p1) &&
-                        game.getPlayers().contains(p2));
+//        for(Player p : game.getPlayers()){
+//            System.out.println(p.getName());
+//        }
+        assertTrue("game should contain p1", game.getPlayers().contains(p1));
+        assertTrue("game should contain p2", game.getPlayers().contains(p2));
         assertTrue("players should know they are in the game",
                 p1.getGame().equals(game) && p2.getGame().equals(game));
 
@@ -72,7 +80,7 @@ public class MancalaGameTests {
         p2.setName("Jess");
         game.addPlayer(p1);
         p2.setGame(game);
-        House firstleft = game.getLeftHouses().get(0); //first left house
+        House firstleft = game.getP1Houses().get(0); //first left house
         int firstpebbles = firstleft.getStore().getPebbles();
         int acrosspebbles = firstleft.getAcross().getPebbles();
         firstleft.takeOppositePebbles();
@@ -92,7 +100,7 @@ public class MancalaGameTests {
         p2.setName("Jess");
         game.addPlayer(p1);
         p2.setGame(game);
-        House left = game.getLeftHouses().get(0);
+        House left = game.getP1Houses().get(0);
         left.redistributeCounterClockwise();
         assertTrue("This house should have 0 pebbles", left.getPebbles() == 0);
         assertTrue("This house should have 4 pebbles", left.getNext().getPebbles() == 4);

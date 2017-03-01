@@ -16,50 +16,75 @@ public class House {
     private House next;
     private House across;
     private House store;
-
+    private MancalaGame game;
+    private int playerNum; // 0 or 1
     /**
      * Getters and Setters
      */
-    public void setStore(House house){
+    public void setStore(House house) {
         this.store = house;
     }
-    public House getStore(House house){
+
+    public House getStore(House house) {
         return this.store;
     }
-    public void setNext(House house){
+
+    public void setNext(House house) {
         this.next = house;
     }
-    public void setAcross(House house){
-        this.across = house;
 
+    public void setAcross(House house) {
+        this.across = house;
     }
-    public House getNext(){
+
+    public House getNext() {
         return this.next;
     }
-    public House getAcross(){
+
+    public House getAcross() {
         return this.across;
     }
-    public boolean getIsStore(){
+
+    public boolean getIsStore() {
         return this.isStore;
     }
-    public House getStore(){
+
+    public House getStore() {
         return this.store;
     }
-    public void setStore(boolean val){
-        this.isStore = true;
+
+    public void setStore(boolean val) {
+        this.isStore = val;
     }
+
     public int getPebbles() {
         return pebbles;
     }
+
     public void setPebbles(int num) {
-        if(num < 0) throw new IllegalArgumentException("setting invalid amount pebbles");
+        if (num < 0) throw new IllegalArgumentException("setting invalid amount pebbles");
         this.pebbles = num;
     }
 
+    public void withGame(MancalaGame game) {
+        this.game = game;
+    }
+
+    public MancalaGame getGame() {
+        return this.game;
+    }
+
+    public int getPlayerNum() {
+        return playerNum;
+    }
+
+    public void setPlayerNum(int playerNum) {
+        this.playerNum = playerNum;
+    }
     /**
      * take the pebbles from the opposite house and add them to the correct store
      */
-    public void takeOppositePebbles(){
+    public void takeOppositePebbles() {
         //Check if a store house is calling this method
         //Stores cannot take opposite pebbles as there is no opposite house from a store
         //Throw an IllegalStateException in this case
@@ -69,7 +94,7 @@ public class House {
         //Grab the pebbles from the opposite store which is easily done given our circular data structure
         //Set the opposite house's pebbles to 0.
         else {
-            this.store.setPebbles(this.across.getPebbles()+this.store.getPebbles());
+            this.store.setPebbles(this.across.getPebbles() + this.store.getPebbles());
             this.across.setPebbles(0);
         }
 
@@ -81,21 +106,26 @@ public class House {
     public void redistributeCounterClockwise() {
         //Start the recursion by passing the recursive method a pebble amount and a connected store
         //the store is important to pass so that a player does not redistribute pebbles into an opposite player's store
-        this.next.redistributeCounterClockwiseRecurse(this.pebbles, this.store);
-        this.pebbles = 0;
+        if(!this.getIsStore() && this.getGame().canPlay() && this.getGame().getPlayerTurn() == this.getPlayerNum()) {
+            this.next.redistributeCounterClockwiseRecurse(this.pebbles, this.store);
+            this.pebbles = 0;
+            this.getGame().incrementCurrentTurn();
+        }
     }
+
     //Proceed with the recursive method
-    //pebbles_in_hand is analagous to the pebbles a player would be holding as they distribute
+    //pebbles_in_hand is analogous to the pebbles a player would be holding as they distribute
     public void redistributeCounterClockwiseRecurse(int pebbles_in_hand, House store) {
         //If we have landed on a store that belongs to the opponent, we skip over it and redistribute to the next house
         if (this.getIsStore() && this != store) {
             this.next.redistributeCounterClockwiseRecurse(pebbles_in_hand, store);
 
         }   //Else, we distribute as normal
-            if (pebbles_in_hand != 0) {
-                this.pebbles += 1;
-                this.next.redistributeCounterClockwiseRecurse(pebbles_in_hand - 1, store);
-            }
+        if (pebbles_in_hand != 0) {
+            this.pebbles += 1;
+            this.next.redistributeCounterClockwiseRecurse(pebbles_in_hand - 1, store);
+        }
     }
+
 }
 
