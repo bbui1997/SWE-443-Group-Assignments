@@ -56,35 +56,20 @@ public class Player {
         return playerNumber;
     }
 
-    //TODO: Implement this function
-    public boolean haveWon() {
+
+    public boolean hasWon() {
         int myNum = getPlayerNumber();
         int otherNum = myNum ^ 1;
-        if (this.getGame().canPlay()) {
+        if (this.getGame().canPlay())
             return false;
-        } else {
-            if (getGame().getStoreCount(myNum) > getGame().getStoreCount(otherNum)) {
-                return true;
-            }
+
+        if (getGame().getStoreCount(myNum) > getGame().getStoreCount(otherNum)) {
+            return true;
         }
+
         return false;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (o instanceof Player) {
-            Player other = (Player) o;
-            if (other.getName().equals(this.name)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    @Override
-    public int hashCode() {
-        return this.getName().hashCode() * 31;
-    }
 
 
 }

@@ -19,6 +19,7 @@ import java.util.List;
  */
 
 public class MancalaGame {
+    // ArrayList is used instead of Set because we use .get() in order to
     private ArrayList<Player> players = new ArrayList<Player>();
     private LinkedList<House> p1Houses = new LinkedList<House>();
     private LinkedList<House> p2Houses = new LinkedList<House>();
@@ -68,7 +69,7 @@ public class MancalaGame {
             p2Houses.add(p2house);
         }
         //link in the correct, counterclockwise direction
-        for (int i = 0; i < numHouses - 2; i++) {
+        for (int i = 0; i < numHouses - 1; i++) {
             p1Houses.get(i).setNext(p1Houses.get(i + 1));
             p2Houses.get(i).setNext(p2Houses.get(i + 1));
         }
@@ -180,7 +181,7 @@ public class MancalaGame {
     public boolean canPlay() {
         //check if one side of the board is empty
         //if it is return true -- false if game is incomplete
-        return !housesEmpty(getP1Houses()) || !housesEmpty(getP2Houses());
+        return !housesEmpty(getP1Houses()) && !housesEmpty(getP2Houses());
     }
 
 }
