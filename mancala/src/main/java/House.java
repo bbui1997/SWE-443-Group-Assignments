@@ -168,7 +168,6 @@ public class House {
     public void redistributeCounterClockwiseRecurse(int pebbles_in_hand, House store) {
         //If we have landed on a store that belongs to the opponent, we skip over it and redistribute to the next house
         if (this.getIsStore() && this != store) {
-            System.out.println("it got here fam");
             this.next.redistributeCounterClockwiseRecurse(pebbles_in_hand, store);
 
         }   //Else, we distribute as normal
