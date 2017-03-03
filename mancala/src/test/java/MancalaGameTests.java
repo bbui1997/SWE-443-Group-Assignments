@@ -133,6 +133,8 @@ public class MancalaGameTests {
     @Test
     public void setNextHouseTest() {
         setUpScenario2();
+        House h3 = new House(); // because why not
+        h2.setPrev(h3);
         h1.setNext(h2);
         assertTrue("h1 next should no longer be null", h1.getNext() != null);
         assertTrue("h1 next should be h2", h1.getNext() == h2);
@@ -224,6 +226,8 @@ public class MancalaGameTests {
     @Test (expected = IllegalArgumentException.class)
     public void getStoreTests(){
         setUpScenario1();
+        assertTrue(game.getP1Store() == game.getP1Houses().get(0).getStore());
+        assertTrue(game.getP2Store() == game.getP2Houses().get(0).getStore());
         game.getStoreCount(3);
     }
 
