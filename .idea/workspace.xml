@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c11e456-d4a5-4df8-898b-e7fb888fcf4a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/MancalaGame.class" afterPath="$PROJECT_DIR$/build/classes/main/MancalaGame.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/test/MancalaGameTests.class" afterPath="$PROJECT_DIR$/build/classes/test/MancalaGameTests.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/House.class" afterPath="$PROJECT_DIR$/build/classes/main/House.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mancala/src/main/java/House.java" afterPath="$PROJECT_DIR$/mancala/src/main/java/House.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mancala/src/main/java/MancalaGame.java" afterPath="$PROJECT_DIR$/mancala/src/main/java/MancalaGame.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mancala/src/test/java/MancalaGameTests.java" afterPath="$PROJECT_DIR$/mancala/src/test/java/MancalaGameTests.java" />
     </list>
     <ignored path="SWE-443-Group-Assignments.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,7 +27,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/SWE-443-Group-Assignments$MancalaGameTests.coverage" NAME="MancalaGameTests Coverage Results" MODIFIED="1488500581823" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/SWE-443-Group-Assignments$All_in_SWE_443_Group_Assignments_test.coverage" NAME="All in SWE-443-Group-Assignments_test Coverage Results" MODIFIED="1488508104371" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/SWE-443-Group-Assignments$All_in_SWE_443_Group_Assignments_test.coverage" NAME="All in SWE-443-Group-Assignments_test Coverage Results" MODIFIED="1488516551223" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -52,14 +53,14 @@
       <file leaf-file-name="MancalaGame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mancala/src/main/java/MancalaGame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-541">
+            <state relative-caret-position="1571">
               <caret line="109" column="17" lean-forward="false" selection-start-line="109" selection-start-column="17" selection-end-line="109" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4284#4285#0" expanded="true" />
-                <element signature="e#4314#4315#0" expanded="true" />
-                <element signature="e#4345#4346#0" expanded="true" />
-                <element signature="e#4375#4376#0" expanded="true" />
+                <element signature="e#4288#4289#0" expanded="true" />
+                <element signature="e#4318#4319#0" expanded="true" />
+                <element signature="e#4349#4350#0" expanded="true" />
+                <element signature="e#4379#4380#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -68,35 +69,33 @@
       <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mancala/src/main/java/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="69" column="21" lean-forward="true" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
+            <state relative-caret-position="449">
+              <caret line="32" column="35" lean-forward="true" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="House.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="House.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mancala/src/main/java/House.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="169" column="49" lean-forward="false" selection-start-line="169" selection-start-column="49" selection-end-line="169" selection-end-column="49" />
+            <state relative-caret-position="121">
+              <caret line="27" column="5" lean-forward="false" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
               <folding>
-                <element signature="e#1089#1090#0" expanded="true" />
-                <element signature="e#1122#1123#0" expanded="true" />
-                <element signature="e#2502#2503#0" expanded="true" />
-                <element signature="e#2536#2537#0" expanded="true" />
-                <element signature="e#3019#3020#0" expanded="true" />
-                <element signature="e#3061#3062#0" expanded="true" />
+                <element signature="e#2432#2433#0" expanded="true" />
+                <element signature="e#2466#2467#0" expanded="true" />
+                <element signature="e#2949#2950#0" expanded="true" />
+                <element signature="e#2991#2992#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MancalaGameTests.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MancalaGameTests.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mancala/src/test/java/MancalaGameTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="225" column="51" lean-forward="false" selection-start-line="225" selection-start-column="51" selection-end-line="225" selection-end-column="51" />
+            <state relative-caret-position="1126">
+              <caret line="86" column="22" lean-forward="false" selection-start-line="86" selection-start-column="22" selection-end-line="86" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -105,9 +104,11 @@
       <file leaf-file-name="Model.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mancala/src/main/java/Model.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
+            <state relative-caret-position="902">
               <caret line="45" column="10" lean-forward="false" selection-start-line="45" selection-start-column="10" selection-end-line="45" selection-end-column="10" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -126,7 +127,9 @@
       <find>throw</find>
       <find>getPlayerCount</find>
       <find>s</find>
+      <find>syste</find>
       <find>system.out</find>
+      <find>getstore</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -608,8 +611,8 @@
         <option value="$PROJECT_DIR$/towerofhanoi/src/main/java/PegBoard.java" />
         <option value="$PROJECT_DIR$/mancala/src/main/java/Player.java" />
         <option value="$PROJECT_DIR$/mancala/src/main/java/MancalaGame.java" />
-        <option value="$PROJECT_DIR$/mancala/src/test/java/MancalaGameTests.java" />
         <option value="$PROJECT_DIR$/mancala/src/main/java/House.java" />
+        <option value="$PROJECT_DIR$/mancala/src/test/java/MancalaGameTests.java" />
       </list>
     </option>
   </component>
@@ -1112,38 +1115,45 @@
       <option name="project" value="LOCAL" />
       <updated>1488508205110</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added many tests to get as close to 100% test coverage as possible. Also added the bidirectional relationships that I could remember">
+      <created>1488508299028</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1488508299028</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_SWE-443-Group-Assignments_test - 2017.03.02 at 20h 55m 32s.xml">
+    <history-entry file="All_in_SWE-443-Group-Assignments_test - 2017.03.02 at 23h 34m 15s.xml">
       <configuration name="All in SWE-443-Group-Assignments_test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_SWE-443-Group-Assignments_test - 2017.03.02 at 21h 18m 48s.xml">
+    <history-entry file="All_in_SWE-443-Group-Assignments_test - 2017.03.02 at 23h 35m 48s.xml">
       <configuration name="All in SWE-443-Group-Assignments_test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_SWE-443-Group-Assignments_test - 2017.03.02 at 21h 21m 24s.xml">
+    <history-entry file="All_in_SWE-443-Group-Assignments_test - 2017.03.02 at 23h 38m 54s.xml">
       <configuration name="All in SWE-443-Group-Assignments_test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_SWE-443-Group-Assignments_test - 2017.03.02 at 21h 24m 24s.xml">
+    <history-entry file="All_in_SWE-443-Group-Assignments_test - 2017.03.02 at 23h 39m 29s.xml">
       <configuration name="All in SWE-443-Group-Assignments_test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_SWE-443-Group-Assignments_test - 2017.03.02 at 21h 24m 42s.xml">
+    <history-entry file="All_in_SWE-443-Group-Assignments_test - 2017.03.02 at 23h 41m 25s.xml">
       <configuration name="All in SWE-443-Group-Assignments_test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_SWE-443-Group-Assignments_test - 2017.03.02 at 21h 25m 45s.xml">
+    <history-entry file="All_in_SWE-443-Group-Assignments_test - 2017.03.02 at 23h 41m 31s.xml">
       <configuration name="All in SWE-443-Group-Assignments_test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_SWE-443-Group-Assignments_test - 2017.03.02 at 21h 25m 53s.xml">
+    <history-entry file="All_in_SWE-443-Group-Assignments_test - 2017.03.02 at 23h 43m 52s.xml">
       <configuration name="All in SWE-443-Group-Assignments_test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_SWE-443-Group-Assignments_test - 2017.03.02 at 21h 27m 42s.xml">
+    <history-entry file="All_in_SWE-443-Group-Assignments_test - 2017.03.02 at 23h 45m 31s.xml">
       <configuration name="All in SWE-443-Group-Assignments_test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_SWE-443-Group-Assignments_test - 2017.03.02 at 21h 28m 25s.xml">
+    <history-entry file="All_in_SWE-443-Group-Assignments_test - 2017.03.02 at 23h 46m 19s.xml">
       <configuration name="All in SWE-443-Group-Assignments_test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_SWE-443-Group-Assignments_test - 2017.03.02 at 21h 31m 27s.xml">
+    <history-entry file="All_in_SWE-443-Group-Assignments_test - 2017.03.02 at 23h 49m 12s.xml">
       <configuration name="All in SWE-443-Group-Assignments_test" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -1165,7 +1175,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3435785" sideWeight="0.53541666" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3435785" sideWeight="0.53541666" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1180,9 +1190,9 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="GitLabIntegration" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3435785" sideWeight="0.46458334" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3435785" sideWeight="0.46458334" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11635565" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Coverage" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299363" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15729167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1234,12 +1244,10 @@
         <state relative-caret-position="1232">
           <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
           <folding>
-            <element signature="e#1089#1090#0" expanded="true" />
-            <element signature="e#1122#1123#0" expanded="true" />
-            <element signature="e#2502#2503#0" expanded="true" />
-            <element signature="e#2536#2537#0" expanded="true" />
-            <element signature="e#3019#3020#0" expanded="true" />
-            <element signature="e#3061#3062#0" expanded="true" />
+            <element signature="e#2432#2433#0" expanded="true" />
+            <element signature="e#2466#2467#0" expanded="true" />
+            <element signature="e#2949#2950#0" expanded="true" />
+            <element signature="e#2991#2992#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1272,10 +1280,10 @@
           <caret line="111" column="0" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4284#4285#0" expanded="true" />
-            <element signature="e#4314#4315#0" expanded="true" />
-            <element signature="e#4345#4346#0" expanded="true" />
-            <element signature="e#4375#4376#0" expanded="true" />
+            <element signature="e#4288#4289#0" expanded="true" />
+            <element signature="e#4318#4319#0" expanded="true" />
+            <element signature="e#4349#4350#0" expanded="true" />
+            <element signature="e#4379#4380#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1322,12 +1330,10 @@
         <state relative-caret-position="264">
           <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="21" selection-end-column="8" />
           <folding>
-            <element signature="e#1089#1090#0" expanded="true" />
-            <element signature="e#1122#1123#0" expanded="true" />
-            <element signature="e#2502#2503#0" expanded="true" />
-            <element signature="e#2536#2537#0" expanded="true" />
-            <element signature="e#3019#3020#0" expanded="true" />
-            <element signature="e#3061#3062#0" expanded="true" />
+            <element signature="e#2432#2433#0" expanded="true" />
+            <element signature="e#2466#2467#0" expanded="true" />
+            <element signature="e#2949#2950#0" expanded="true" />
+            <element signature="e#2991#2992#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1345,10 +1351,10 @@
           <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4284#4285#0" expanded="true" />
-            <element signature="e#4314#4315#0" expanded="true" />
-            <element signature="e#4345#4346#0" expanded="true" />
-            <element signature="e#4375#4376#0" expanded="true" />
+            <element signature="e#4288#4289#0" expanded="true" />
+            <element signature="e#4318#4319#0" expanded="true" />
+            <element signature="e#4349#4350#0" expanded="true" />
+            <element signature="e#4379#4380#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1395,12 +1401,10 @@
         <state relative-caret-position="816">
           <caret line="66" column="5" lean-forward="false" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
           <folding>
-            <element signature="e#1089#1090#0" expanded="true" />
-            <element signature="e#1122#1123#0" expanded="true" />
-            <element signature="e#2502#2503#0" expanded="true" />
-            <element signature="e#2536#2537#0" expanded="true" />
-            <element signature="e#3019#3020#0" expanded="true" />
-            <element signature="e#3061#3062#0" expanded="true" />
+            <element signature="e#2432#2433#0" expanded="true" />
+            <element signature="e#2466#2467#0" expanded="true" />
+            <element signature="e#2949#2950#0" expanded="true" />
+            <element signature="e#2991#2992#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1448,10 +1452,10 @@
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4284#4285#0" expanded="true" />
-            <element signature="e#4314#4315#0" expanded="true" />
-            <element signature="e#4345#4346#0" expanded="true" />
-            <element signature="e#4375#4376#0" expanded="true" />
+            <element signature="e#4288#4289#0" expanded="true" />
+            <element signature="e#4318#4319#0" expanded="true" />
+            <element signature="e#4349#4350#0" expanded="true" />
+            <element signature="e#4379#4380#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1461,12 +1465,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1089#1090#0" expanded="true" />
-            <element signature="e#1122#1123#0" expanded="true" />
-            <element signature="e#2502#2503#0" expanded="true" />
-            <element signature="e#2536#2537#0" expanded="true" />
-            <element signature="e#3019#3020#0" expanded="true" />
-            <element signature="e#3061#3062#0" expanded="true" />
+            <element signature="e#2432#2433#0" expanded="true" />
+            <element signature="e#2466#2467#0" expanded="true" />
+            <element signature="e#2949#2950#0" expanded="true" />
+            <element signature="e#2991#2992#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1493,10 +1495,10 @@
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4284#4285#0" expanded="true" />
-            <element signature="e#4314#4315#0" expanded="true" />
-            <element signature="e#4345#4346#0" expanded="true" />
-            <element signature="e#4375#4376#0" expanded="true" />
+            <element signature="e#4288#4289#0" expanded="true" />
+            <element signature="e#4318#4319#0" expanded="true" />
+            <element signature="e#4349#4350#0" expanded="true" />
+            <element signature="e#4379#4380#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1506,12 +1508,10 @@
         <state relative-caret-position="1122">
           <caret line="69" column="73" lean-forward="false" selection-start-line="69" selection-start-column="73" selection-end-line="69" selection-end-column="73" />
           <folding>
-            <element signature="e#1089#1090#0" expanded="true" />
-            <element signature="e#1122#1123#0" expanded="true" />
-            <element signature="e#2502#2503#0" expanded="true" />
-            <element signature="e#2536#2537#0" expanded="true" />
-            <element signature="e#3019#3020#0" expanded="true" />
-            <element signature="e#3061#3062#0" expanded="true" />
+            <element signature="e#2432#2433#0" expanded="true" />
+            <element signature="e#2466#2467#0" expanded="true" />
+            <element signature="e#2949#2950#0" expanded="true" />
+            <element signature="e#2991#2992#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1620,54 +1620,54 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mancala/src/main/java/Model.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
+        <state relative-caret-position="902">
           <caret line="45" column="10" lean-forward="false" selection-start-line="45" selection-start-column="10" selection-end-line="45" selection-end-column="10" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mancala/src/main/java/House.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="27" column="5" lean-forward="false" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+          <folding>
+            <element signature="e#2432#2433#0" expanded="true" />
+            <element signature="e#2466#2467#0" expanded="true" />
+            <element signature="e#2949#2950#0" expanded="true" />
+            <element signature="e#2991#2992#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mancala/src/main/java/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="69" column="21" lean-forward="true" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
+        <state relative-caret-position="449">
+          <caret line="32" column="35" lean-forward="true" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mancala/src/main/java/MancalaGame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-541">
+        <state relative-caret-position="1571">
           <caret line="109" column="17" lean-forward="false" selection-start-line="109" selection-start-column="17" selection-end-line="109" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4284#4285#0" expanded="true" />
-            <element signature="e#4314#4315#0" expanded="true" />
-            <element signature="e#4345#4346#0" expanded="true" />
-            <element signature="e#4375#4376#0" expanded="true" />
+            <element signature="e#4288#4289#0" expanded="true" />
+            <element signature="e#4318#4319#0" expanded="true" />
+            <element signature="e#4349#4350#0" expanded="true" />
+            <element signature="e#4379#4380#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mancala/src/test/java/MancalaGameTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="225" column="51" lean-forward="false" selection-start-line="225" selection-start-column="51" selection-end-line="225" selection-end-column="51" />
+        <state relative-caret-position="1126">
+          <caret line="86" column="22" lean-forward="false" selection-start-line="86" selection-start-column="22" selection-end-line="86" selection-end-column="22" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mancala/src/main/java/House.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="169" column="49" lean-forward="false" selection-start-line="169" selection-start-column="49" selection-end-line="169" selection-end-column="49" />
-          <folding>
-            <element signature="e#1089#1090#0" expanded="true" />
-            <element signature="e#1122#1123#0" expanded="true" />
-            <element signature="e#2502#2503#0" expanded="true" />
-            <element signature="e#2536#2537#0" expanded="true" />
-            <element signature="e#3019#3020#0" expanded="true" />
-            <element signature="e#3061#3062#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

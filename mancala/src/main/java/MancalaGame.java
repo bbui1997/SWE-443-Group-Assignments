@@ -45,11 +45,11 @@ public class MancalaGame {
         p1Store = new House();
         p1Store.withGame(this);
         p1Store.setPebbles(0);
-        p1Store.setStore(true);
+        p1Store.setIsStore(true);
         p2Store = new House();
         p2Store.withGame(this);
         p2Store.setPebbles(0);
-        p2Store.setStore(true);
+        p2Store.setIsStore(true);
 
         //link up all the houses in one direction and init each house with 3 pebbles
         //assign a left store or a right store to the correct houses. This will make the

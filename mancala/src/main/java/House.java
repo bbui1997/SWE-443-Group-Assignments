@@ -27,43 +27,42 @@ public class House {
         this.store = house;
     }
 
-    public House getStore(House house) {
-        return this.store;
-    }
-
     public void setPrev(House house) {
-        if (house == null) {
-            if (this.prev != null) {
-                this.prev.next = null;
-                this.prev = null;
-            }
-        } else if (this.prev != house || house.next != this) {
+        if(this.prev != house){
+            House oldPrev = this.prev;
             this.prev = house;
-            house.setNext(this);
+            if(oldPrev != null){
+                oldPrev.next = null;
+            }
+            if(this.prev != null){
+                this.prev.setNext(this);
+            }
         }
     }
 
     public void setNext(House house) {
-        if (house == null) {
-            if (this.next != null) {
-                this.next.prev = null;
-                this.next = null;
-            }
-        } else if (house.next != this) {
+        if(this.next != house){
+            House oldNext = this.next;
             this.next = house;
-            house.setPrev(this);
+            if(oldNext != null){
+                oldNext.prev = null;
+            }
+            if(this.next != null){
+                this.next.setPrev(this);
+            }
         }
     }
 
     public void setAcross(House house) {
-        if (house == null) {
-            if (this.across != null) {
-                this.across.across = null;
-                this.across = null;
-            }
-        } else if (this.across == null || !this.across.across.equals(this)) {
+        if(this.across != house){
+            House oldAcross = this.across;
             this.across = house;
-            house.setAcross(this);
+            if(oldAcross != null){
+                oldAcross.across = null;
+            }
+            if(this.across != null){
+                this.across.setAcross(this);
+            }
         }
     }
 
@@ -87,7 +86,7 @@ public class House {
         return this.store;
     }
 
-    public void setStore(boolean val) {
+    public void setIsStore(boolean val) {
         this.isStore = val;
     }
 

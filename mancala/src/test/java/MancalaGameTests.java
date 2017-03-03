@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
 public class MancalaGameTests {
     MancalaGame game;
     Player p1, p2;
-    House h1, h2;
+    House h1, h2, h3;
 
     public void setUpScenario1() {
         game = new MancalaGame(6);  //testing a normal mancala board of 12 houses (6 per side)
@@ -25,6 +25,7 @@ public class MancalaGameTests {
     public void setUpScenario2() {
         h1 = new House();
         h2 = new House();
+        h3 = new House();
     }
 
     /**
@@ -80,14 +81,14 @@ public class MancalaGameTests {
         p2.setName("Jess");
         game.addPlayer(p1);
         p2.setGame(game);
-        House firstleft = game.getP1Houses().get(0); //first left house
-        int firstpebbles = firstleft.getStore().getPebbles();
-        int acrosspebbles = firstleft.getAcross().getPebbles();
-        int ourpebbles = firstleft.getPebbles();
-        firstleft.takeOppositePebbles();
-        assertTrue("The opposite house should have 0 pebbles", firstleft.getAcross().getPebbles() == 0);
-        assertTrue("our house should also have 0 pebbles", firstleft.getPebbles() == 0);
-        assertTrue("Store should have opposite house + current pebbles + own pebbles", firstleft.getStore().getPebbles() == firstpebbles + acrosspebbles + ourpebbles);
+        House firstLeft = game.getP1Houses().get(0); //first left house
+        int firstPebbles = firstLeft.getStore().getPebbles();
+        int acrossPebbles = firstLeft.getAcross().getPebbles();
+        int ourPebbles = firstLeft.getPebbles();
+        firstLeft.takeOppositePebbles();
+        assertTrue("The opposite house should have 0 pebbles", firstLeft.getAcross().getPebbles() == 0);
+        assertTrue("our house should also have 0 pebbles", firstLeft.getPebbles() == 0);
+        assertTrue("Store should have opposite house + current pebbles + own pebbles", firstLeft.getStore().getPebbles() == firstPebbles + acrossPebbles + ourPebbles);
 
     }
 
@@ -114,11 +115,13 @@ public class MancalaGameTests {
         //obviously this is a silly way to write a unit test but given that it's just a test, efficiency is unnecessary
     }
 
-    //testing bidirectionality of setAcross
+    // testing bidirectionality of setAcross
     @Test
     public void setAcrossHouseTest() {
         setUpScenario2();
+        h3.setAcross(h1);
         h1.setAcross(h2);
+        assertTrue("h3 across should be null", h3.getAcross() == null);
         assertTrue("h1 across should no longer null", h1.getAcross() != null);
         assertTrue("h1 across should be h2", h1.getAcross() == h2);
         // 1 set should test both
@@ -130,12 +133,13 @@ public class MancalaGameTests {
                 h2.getAcross() == null && h1.getAcross() == null);
     }
 
+    // testing bidirectionality of setNext/setPrev
     @Test
-    public void setNextHouseTest() {
+    public void setNextandPrevHouseTest() {
         setUpScenario2();
-        House h3 = new House(); // because why not
         h2.setPrev(h3);
         h1.setNext(h2);
+        assertTrue("h3 next should now be null", h3.getNext() == null);
         assertTrue("h1 next should no longer be null", h1.getNext() != null);
         assertTrue("h1 next should be h2", h1.getNext() == h2);
         assertTrue("h2 prev should be h1", h2.getPrev() == h1);
@@ -146,6 +150,8 @@ public class MancalaGameTests {
         assertTrue(h1.getNext() == null && h2.getPrev() == null);
     }
 
+    // Test pairs, used to cover nearly identical code
+    // Could refactor... but decide not to
     @Test
     public void p1HasWonAndHousesEmptyAndCheckStoreCount() {
         setUpScenario1();
@@ -163,13 +169,6 @@ public class MancalaGameTests {
         assertTrue(p1.hasWon());
 
     }
-
-    @Test (expected = IllegalStateException.class)
-    public void attemptToTakeOppositeStore(){
-        setUpScenario1();
-        game.getP1Houses().get(0).getStore().takeOppositePebbles();
-    }
-
     @Test
     public void p2HasWonAndHousesEmptyAndCheckStoreCount() {
         setUpScenario1();
@@ -223,14 +222,6 @@ public class MancalaGameTests {
         assertTrue(game.getPlayerTurn() == 1);
     }
 
-    @Test (expected = IllegalArgumentException.class)
-    public void getStoreTests(){
-        setUpScenario1();
-        assertTrue(game.getP1Store() == game.getP1Houses().get(0).getStore());
-        assertTrue(game.getP2Store() == game.getP2Houses().get(0).getStore());
-        game.getStoreCount(3);
-    }
-
     @Test
     public void attemptToAddMoreThan2PlayersThenRemoveP1AndAddP3(){
         setUpScenario1();
@@ -255,6 +246,19 @@ public class MancalaGameTests {
         game.getP1Houses().get(2).setPebbles(10);
         game.getP1Houses().get(2).redistributeCounterClockwise();
         assertTrue(game.getStoreCount(p2.getPlayerNumber()) == 0);
+    }
+
+    @Test (expected = IllegalArgumentException.class)
+    public void getStoreTests(){
+        setUpScenario1();
+        assertTrue(game.getP1Store() == game.getP1Houses().get(0).getStore());
+        assertTrue(game.getP2Store() == game.getP2Houses().get(0).getStore());
+        game.getStoreCount(3); // invald argument, throws IllegalArgumentException
+    }
+    @Test (expected = IllegalStateException.class)
+    public void attemptToTakeOppositeStore(){
+        setUpScenario1();
+        game.getP1Houses().get(0).getStore().takeOppositePebbles(); // can't take opposite from a store
     }
 
 
