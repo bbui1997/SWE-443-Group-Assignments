@@ -1,17 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6c11e456-d4a5-4df8-898b-e7fb888fcf4a" name="Default" comment="Added many tests to get as close to 100% test coverage as possible. Also added the bidirectional relationships that I could remember">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/House.class" afterPath="$PROJECT_DIR$/build/classes/main/House.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/MancalaGame.class" afterPath="$PROJECT_DIR$/build/classes/main/MancalaGame.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Player.class" afterPath="$PROJECT_DIR$/build/classes/main/Player.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/test/MancalaGameTests.class" afterPath="$PROJECT_DIR$/build/classes/test/MancalaGameTests.class" />
-      <change type="MODIFICATION" beforePath="$USER_HOME$/Desktop/CS 443/Assignment 4/SWE-443-Group-Assignments/.idea/workspace.xml" afterPath="$USER_HOME$/Desktop/CS 443/Assignment 4/SWE-443-Group-Assignments/.idea/workspace.xml" />
+    <list default="true" id="6c11e456-d4a5-4df8-898b-e7fb888fcf4a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mancala/src/main/java/House.java" afterPath="$PROJECT_DIR$/mancala/src/main/java/House.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mancala/src/main/java/MancalaGame.java" afterPath="$PROJECT_DIR$/mancala/src/main/java/MancalaGame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mancala/src/main/java/Player.java" afterPath="$PROJECT_DIR$/mancala/src/main/java/Player.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mancala/src/test/java/MancalaGameTests.java" afterPath="$PROJECT_DIR$/mancala/src/test/java/MancalaGameTests.java" />
     </list>
     <ignored path="SWE-443-Group-Assignments.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -106,7 +97,7 @@
         <entry file="file://$PROJECT_DIR$/mancala/src/main/java/Model.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="374">
-              <caret line="18" column="10" lean-forward="false" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+              <caret line="45" column="10" lean-forward="false" selection-start-line="45" selection-start-column="10" selection-end-line="45" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -733,6 +724,11 @@
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
+  <component name="Push.Settings">
+    <excluded-roots>
+      <path value="$USER_HOME$/Desktop/CS 443/Assignment 4/SWE-443-Group-Assignments" />
+    </excluded-roots>
+  </component>
   <component name="RunManager" selected="JUnit.All in SWE-443-Group-Assignments_test">
     <configuration default="false" name="TestDiskMove" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -1085,7 +1081,14 @@
       <option name="project" value="LOCAL" />
       <updated>1488326703494</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added many tests to get as close to 100% test coverage as possible. Also added the bidirectional relationships that I could remember">
+      <created>1488506305589</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1488506305589</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1568,7 +1571,7 @@
     <entry file="file://$PROJECT_DIR$/mancala/src/main/java/Model.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
-          <caret line="18" column="10" lean-forward="false" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+          <caret line="45" column="10" lean-forward="false" selection-start-line="45" selection-start-column="10" selection-end-line="45" selection-end-column="10" />
           <folding />
         </state>
       </provider>
