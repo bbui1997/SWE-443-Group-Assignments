@@ -25,7 +25,6 @@ public class MancalaGame {
     private LinkedList<House> p2Houses = new LinkedList<House>();
     private House p1Store;
     private House p2Store;
-    private int playerTurn;
     private int currentTurn;
 
     //Constructor that calls the board setup method.
@@ -84,7 +83,6 @@ public class MancalaGame {
             p1Houses.get(i).setAcross(p2Houses.get((numHouses - i) - 1));
             p2Houses.get(i).setAcross(p1Houses.get((numHouses - i) - 1));
         }
-        playerTurn = 0;
         currentTurn = 0;
     }//At this point, the board is setup successfully
 
@@ -119,6 +117,7 @@ public class MancalaGame {
         return currentTurn;
     }
 
+    // will either be 0 or 1
     public int getPlayerTurn() {
         return currentTurn % 2;
     }
