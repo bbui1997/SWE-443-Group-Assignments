@@ -251,8 +251,6 @@ public class MancalaGameTests {
     @Test (expected = IllegalArgumentException.class)
     public void getStoreTests(){
         setUpScenario1();
-        assertTrue(game.getP1Store() == game.getP1Houses().get(0).getStore());
-        assertTrue(game.getP2Store() == game.getP2Houses().get(0).getStore());
         game.getStoreCount(3); // invald argument, throws IllegalArgumentException
     }
     @Test (expected = IllegalStateException.class)

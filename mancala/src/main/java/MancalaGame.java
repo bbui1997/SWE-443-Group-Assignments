@@ -102,13 +102,7 @@ public class MancalaGame {
     public List<Player> getPlayers() {
         return Collections.unmodifiableList(players);
     }
-
-    public House getP1Store(){
-        return p1Store;
-    }
-    public House getP2Store(){
-        return p2Store;
-    }
+    
     public int getPlayerCount() {
         return players.size();
     }
