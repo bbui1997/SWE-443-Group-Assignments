@@ -142,7 +142,8 @@ public class House {
         boolean successfulMove = false;
         //Start the recursion by passing the recursive method a pebble amount and a connected store
         //the store is important to pass so that a player does not redistribute pebbles into an opposite player's store
-        if (!this.getIsStore() && this.getGame().canPlay() && this.getGame().getPlayerTurn() == this.getPlayerNum()) {
+        if (!this.getIsStore() && this.getGame().canPlay() && this.getGame().getPlayerTurn() == this.getPlayerNum()
+                && this.getPebbles() > 0) {
             successfulMove = true;
             this.next.redistributeCounterClockwiseRecurse(this.pebbles, this.store);
             this.pebbles = 0;

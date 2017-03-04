@@ -220,6 +220,11 @@ public class MancalaGameTests {
         game.getP1Houses().get(0).redistributeCounterClockwise();
         // it is still player 2's turn (1)
         assertTrue(game.getPlayerTurn() == 1);
+
+        // testing that an invalid move won't change the player turn
+        game.getP2Houses().get(0).setPebbles(0);
+        game.getP2Houses().get(0).redistributeCounterClockwise(); // try to move on an empty house
+        assertTrue(game.getPlayerTurn() == 1);
     }
 
     @Test
