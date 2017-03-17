@@ -117,6 +117,10 @@ public class MancalaGame {
         return currentTurn;
     }
 
+    public void setCurrentTurn(int val){
+        currentTurn = val;
+    }
+
     // will either be 0 or 1
     public int getPlayerTurn() {
         return currentTurn % 2;

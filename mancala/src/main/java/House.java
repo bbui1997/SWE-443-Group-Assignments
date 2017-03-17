@@ -171,9 +171,28 @@ public class House {
             this.next.redistributeCounterClockwiseRecurse(pebbles_in_hand, store);
 
         }   //Else, we distribute as normal
-        else if (pebbles_in_hand != 0) {
+        else if (pebbles_in_hand > 1) {
             this.pebbles += 1;
             this.next.redistributeCounterClockwiseRecurse(pebbles_in_hand - 1, store);
+        }
+        else if (pebbles_in_hand == 1){
+            if(this != store) { // doesn't land in our store
+                if (this.getPlayerNum() == getGame().getPlayerTurn() && // lands on our side
+                        this.pebbles == 0 && this.getAcross().getPebbles() > 0) { // this store is empty but opposite is not
+                    this.pebbles += 1;
+                    this.takeOppositePebbles();
+                    return;
+                }
+                else{ // else, just increment and exit
+                    this.pebbles += 1;
+                    return;
+                }
+            }
+            else{ // if the last pebble lands in our store, player gets to go again
+                this.pebbles += 1;
+                getGame().setCurrentTurn(getGame().getCurrentTurn()-1);
+                return;
+            }
         }
     }
 
