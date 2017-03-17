@@ -10,6 +10,8 @@
  * 3 pebbles while a store contains 0.
  */
 
+//testing a push
+
 public class House {
     private int pebbles;
     private boolean isStore = false;
