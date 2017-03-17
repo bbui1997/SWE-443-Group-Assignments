@@ -101,6 +101,20 @@ public class MancalaGameTests {
         assertTrue(game.getP1Houses().get(0).getStore().getPebbles() == 0);
     }
 
+    // Distribute pebbles where the last pebble lands an empty house on the opposite side of the board
+    // and checks to see that we don't take the opposite from the other side of the board
+    @Test
+    public void DONTtakeOppositePebblesTest2(){
+        setUpScenario1();
+        game.addPlayer(p1);
+        p2.setGame(game);
+        game.getP2Houses().get(1).setPebbles(0);
+        game.getP1Houses().get(5).redistributeCounterClockwise();
+        assertTrue(game.getP2Houses().get(1).getPebbles() == 1 &&
+                           game.getP1Houses().get(4).getPebbles() == 3);
+        assertTrue(game.getP1Houses().get(0).getStore().getPebbles() == 1);
+    }
+
     /**
      * Scenario: Alex redistributes his pebbles normally
      * 1. Alex and Jess enter the game
