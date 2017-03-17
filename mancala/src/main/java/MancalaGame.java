@@ -19,12 +19,12 @@ import java.util.List;
  */
 
 public class MancalaGame {
+    // ArrayList is used instead of Set because we use .get() in order to
     private ArrayList<Player> players = new ArrayList<Player>();
     private LinkedList<House> p1Houses = new LinkedList<House>();
     private LinkedList<House> p2Houses = new LinkedList<House>();
     private House p1Store;
     private House p2Store;
-    private int playerTurn;
     private int currentTurn;
 
     //Constructor that calls the board setup method.
@@ -44,11 +44,11 @@ public class MancalaGame {
         p1Store = new House();
         p1Store.withGame(this);
         p1Store.setPebbles(0);
-        p1Store.setStore(true);
+        p1Store.setIsStore(true);
         p2Store = new House();
         p2Store.withGame(this);
         p2Store.setPebbles(0);
-        p2Store.setStore(true);
+        p2Store.setIsStore(true);
 
         //link up all the houses in one direction and init each house with 3 pebbles
         //assign a left store or a right store to the correct houses. This will make the
@@ -68,7 +68,7 @@ public class MancalaGame {
             p2Houses.add(p2house);
         }
         //link in the correct, counterclockwise direction
-        for (int i = 0; i < numHouses - 2; i++) {
+        for (int i = 0; i < numHouses - 1; i++) {
             p1Houses.get(i).setNext(p1Houses.get(i + 1));
             p2Houses.get(i).setNext(p2Houses.get(i + 1));
         }
@@ -83,7 +83,6 @@ public class MancalaGame {
             p1Houses.get(i).setAcross(p2Houses.get((numHouses - i) - 1));
             p2Houses.get(i).setAcross(p1Houses.get((numHouses - i) - 1));
         }
-        playerTurn = 0;
         currentTurn = 0;
     }//At this point, the board is setup successfully
 
@@ -118,6 +117,7 @@ public class MancalaGame {
         return currentTurn;
     }
 
+    // will either be 0 or 1
     public int getPlayerTurn() {
         return currentTurn % 2;
     }
@@ -180,7 +180,7 @@ public class MancalaGame {
     public boolean canPlay() {
         //check if one side of the board is empty
         //if it is return true -- false if game is incomplete
-        return !housesEmpty(getP1Houses()) || !housesEmpty(getP2Houses());
+        return !housesEmpty(getP1Houses()) && !housesEmpty(getP2Houses());
     }
 
 }

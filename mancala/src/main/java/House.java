@@ -13,11 +13,13 @@
 public class House {
     private int pebbles;
     private boolean isStore = false;
+    private House prev;
     private House next;
     private House across;
     private House store;
     private MancalaGame game;
     private int playerNum; // 0 or 1
+
     /**
      * Getters and Setters
      */
@@ -25,16 +27,47 @@ public class House {
         this.store = house;
     }
 
-    public House getStore(House house) {
-        return this.store;
+    public void setPrev(House house) {
+        if(this.prev != house){
+            House oldPrev = this.prev;
+            this.prev = house;
+            if(oldPrev != null){
+                oldPrev.next = null;
+            }
+            if(this.prev != null){
+                this.prev.setNext(this);
+            }
+        }
     }
 
     public void setNext(House house) {
-        this.next = house;
+        if(this.next != house){
+            House oldNext = this.next;
+            this.next = house;
+            if(oldNext != null){
+                oldNext.prev = null;
+            }
+            if(this.next != null){
+                this.next.setPrev(this);
+            }
+        }
     }
 
     public void setAcross(House house) {
-        this.across = house;
+        if(this.across != house){
+            House oldAcross = this.across;
+            this.across = house;
+            if(oldAcross != null){
+                oldAcross.across = null;
+            }
+            if(this.across != null){
+                this.across.setAcross(this);
+            }
+        }
+    }
+
+    public House getPrev() {
+        return this.prev;
     }
 
     public House getNext() {
@@ -53,7 +86,7 @@ public class House {
         return this.store;
     }
 
-    public void setStore(boolean val) {
+    public void setIsStore(boolean val) {
         this.isStore = val;
     }
 
@@ -81,6 +114,7 @@ public class House {
     public void setPlayerNum(int playerNum) {
         this.playerNum = playerNum;
     }
+
     /**
      * take the pebbles from the opposite house and add them to the correct store
      */
@@ -88,14 +122,15 @@ public class House {
         //Check if a store house is calling this method
         //Stores cannot take opposite pebbles as there is no opposite house from a store
         //Throw an IllegalStateException in this case
-        if (this.isStore) {
+        if (this.isStore)
             throw new IllegalStateException("Cannot take opposite pebbles from a store");
-        }
+
         //Grab the pebbles from the opposite store which is easily done given our circular data structure
         //Set the opposite house's pebbles to 0.
         else {
-            this.store.setPebbles(this.across.getPebbles() + this.store.getPebbles());
+            this.store.setPebbles(this.across.getPebbles() + this.store.getPebbles() + this.getPebbles());
             this.across.setPebbles(0);
+            this.setPebbles(0);
         }
 
     }
@@ -103,14 +138,29 @@ public class House {
     /**
      * Recursively redistribute the pebbles counter clockwise.
      */
-    public void redistributeCounterClockwise() {
+    public boolean redistributeCounterClockwise() {
+        boolean successfulMove = false;
         //Start the recursion by passing the recursive method a pebble amount and a connected store
         //the store is important to pass so that a player does not redistribute pebbles into an opposite player's store
-        if(!this.getIsStore() && this.getGame().canPlay() && this.getGame().getPlayerTurn() == this.getPlayerNum()) {
+        if (!this.getIsStore() && this.getGame().canPlay() && this.getGame().getPlayerTurn() == this.getPlayerNum()
+                && this.getPebbles() > 0) {
+            successfulMove = true;
             this.next.redistributeCounterClockwiseRecurse(this.pebbles, this.store);
             this.pebbles = 0;
             this.getGame().incrementCurrentTurn();
         }
+        if (!this.getGame().canPlay()) {
+            if (this.getGame().housesEmpty(this.getGame().getP1Houses())) {
+                for (House h : this.getGame().getP2Houses()) {
+                    h.takeOppositePebbles();
+                }
+            } else if (this.getGame().housesEmpty(this.getGame().getP2Houses())) {
+                for (House h : this.getGame().getP1Houses()) {
+                    h.takeOppositePebbles();
+                }
+            }
+        }
+        return successfulMove;
     }
 
     //Proceed with the recursive method
@@ -121,7 +171,7 @@ public class House {
             this.next.redistributeCounterClockwiseRecurse(pebbles_in_hand, store);
 
         }   //Else, we distribute as normal
-        if (pebbles_in_hand != 0) {
+        else if (pebbles_in_hand != 0) {
             this.pebbles += 1;
             this.next.redistributeCounterClockwiseRecurse(pebbles_in_hand - 1, store);
         }
