@@ -81,15 +81,38 @@ public class MancalaGameTests {
         p2.setName("Jess");
         game.addPlayer(p1);
         p2.setGame(game);
-        House firstLeft = game.getP1Houses().get(0); //first left house
-        int firstPebbles = firstLeft.getStore().getPebbles();
-        int acrossPebbles = firstLeft.getAcross().getPebbles();
-        int ourPebbles = firstLeft.getPebbles();
-        firstLeft.takeOppositePebbles();
-        assertTrue("The opposite house should have 0 pebbles", firstLeft.getAcross().getPebbles() == 0);
-        assertTrue("our house should also have 0 pebbles", firstLeft.getPebbles() == 0);
-        assertTrue("Store should have opposite house + current pebbles + own pebbles", firstLeft.getStore().getPebbles() == firstPebbles + acrossPebbles + ourPebbles);
+        game.getP1Houses().get(5).setPebbles(0);
+        game.getP1Houses().get(2).redistributeCounterClockwise();
+        assertTrue(game.getP1Houses().get(5).getPebbles() == 0 && game.getP2Houses().get(0).getPebbles() == 0);
+        assertTrue(game.getP1Houses().get(0).getStore().getPebbles() == 4);
+    }
 
+    // Final pebble lands on an empty house
+    // But the across house is also empty, so we don't take use takeOppositePebbles() method
+    @Test
+    public void DONTtakeOppositePebblesTest(){
+        setUpScenario1();
+        game.addPlayer(p1);
+        p2.setGame(game);
+        game.getP1Houses().get(5).setPebbles(0);
+        game.getP2Houses().get(0).setPebbles(0);
+        game.getP1Houses().get(2).redistributeCounterClockwise();
+        assertTrue(game.getP1Houses().get(5).getPebbles() == 1);
+        assertTrue(game.getP1Houses().get(0).getStore().getPebbles() == 0);
+    }
+
+    // Distribute pebbles where the last pebble lands an empty house on the opposite side of the board
+    // and checks to see that we don't take the opposite from the other side of the board
+    @Test
+    public void DONTtakeOppositePebblesTest2(){
+        setUpScenario1();
+        game.addPlayer(p1);
+        p2.setGame(game);
+        game.getP2Houses().get(1).setPebbles(0);
+        game.getP1Houses().get(5).redistributeCounterClockwise();
+        assertTrue(game.getP2Houses().get(1).getPebbles() == 1 &&
+                           game.getP1Houses().get(4).getPebbles() == 3);
+        assertTrue(game.getP1Houses().get(0).getStore().getPebbles() == 1);
     }
 
     /**
@@ -252,6 +275,18 @@ public class MancalaGameTests {
         game.getP1Houses().get(2).redistributeCounterClockwise();
         assertTrue(game.getStoreCount(p2.getPlayerNumber()) == 0);
     }
+
+    // Tests to make sure having the last pebble land in the store lets the player play again
+    @Test
+    public void lastPebbleLandsInStore(){
+        setUpScenario1();
+        p1.setGame(game);
+        p2.setGame(game);
+        game.getP1Houses().get(3).redistributeCounterClockwise();
+        assertTrue(game.getStoreCount(p1.getPlayerNumber()) == 1);
+        assertTrue(game.getCurrentTurn() == 0 && game.getPlayerTurn() == 0);
+    }
+
 
     @Test (expected = IllegalArgumentException.class)
     public void getStoreTests(){
