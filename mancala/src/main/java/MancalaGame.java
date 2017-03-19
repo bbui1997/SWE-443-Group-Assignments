@@ -101,6 +101,14 @@ public class MancalaGame {
         return Collections.unmodifiableList(players);
     }
 
+    public House getP1Store() {
+        return this.p1Store;
+    }
+
+    public House getP2Store() {
+        return this.p2Store;
+    }
+
     public int getPlayerCount() {
         return players.size();
     }

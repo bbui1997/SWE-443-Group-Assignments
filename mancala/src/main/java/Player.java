@@ -69,7 +69,19 @@ public class Player {
 
         return false;
     }
+    //Added to check for ties
+    public boolean hasTie(){
 
+        int myNum = getPlayerNumber();
+        int otherNum = myNum ^ 1;
+        if (this.getGame().canPlay())
+            return false;
 
+        if (getGame().getStoreCount(myNum) == getGame().getStoreCount(otherNum)) {
+            return true;
+        }
+
+        return false;
+    }
 
 }

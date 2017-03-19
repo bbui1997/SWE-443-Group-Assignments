@@ -149,17 +149,6 @@ public class House {
             this.pebbles = 0;
             this.getGame().incrementCurrentTurn();
         }
-        if (!this.getGame().canPlay()) {
-            if (this.getGame().housesEmpty(this.getGame().getP1Houses())) {
-                for (House h : this.getGame().getP2Houses()) {
-                    h.takeOppositePebbles();
-                }
-            } else if (this.getGame().housesEmpty(this.getGame().getP2Houses())) {
-                for (House h : this.getGame().getP1Houses()) {
-                    h.takeOppositePebbles();
-                }
-            }
-        }
         return successfulMove;
     }
 
