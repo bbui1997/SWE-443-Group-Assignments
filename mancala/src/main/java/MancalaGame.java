@@ -188,7 +188,7 @@ public class MancalaGame {
     }
 
 
-    //TODO: Implement this function
+
     public boolean canPlay() {
         //check if one side of the board is empty
         //if it is return true -- false if game is incomplete

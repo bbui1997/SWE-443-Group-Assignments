@@ -182,46 +182,30 @@ public class MancalaGameTests {
         p1.setGame(game);
         p2.setGame(game);
         assertFalse(p1.hasWon());
+        game.getP1Houses().get(0).redistributeCounterClockwise();
         for (House h : game.getP2Houses()) {
             h.setPebbles(0); // manually force p2 to lose
         }
-        game.getP1Houses().get(0).redistributeCounterClockwise();
         assertTrue(!game.canPlay());
         assertTrue(game.housesEmpty(game.getP2Houses()));
-        assertTrue(game.getStoreCount(p1.getPlayerNumber()) == 9);
+        assertTrue(game.getP1Store().getPebbles() == 1);
+        assertTrue(game.getP2Store().getPebbles() == 0);
         assertTrue(p1.hasWon());
-
-    }
-    @Test
-    public void p2HasWonAndHousesEmptyAndCheckStoreCount() {
-        setUpScenario1();
-        game = new MancalaGame(3);
-        p1.setGame(game);
-        p2.setGame(game);
-        assertFalse(p2.hasWon());
-        for (House h : game.getP1Houses()) {
-            h.setPebbles(0); // manually force p1 to lose
-        }
-        game.getP2Houses().get(0).redistributeCounterClockwise();
-        assertTrue(!game.canPlay());
-        assertTrue(game.housesEmpty(game.getP1Houses()));
-        assertTrue(game.getStoreCount(p2.getPlayerNumber()) == 9);
-        assertTrue(p2.hasWon());
-
-        // unsuccessful move
-        assertFalse(game.getP2Houses().get(1).redistributeCounterClockwise());
+        assertFalse(p1.hasTie());
     }
     @Test
     public void p1Andp2HaveTied(){
         setUpScenario1();
         p1.setGame(game);
         p2.setGame(game);
+        assertFalse(p1.hasTie());
         for(int i = 0; i < game.getP1Houses().size(); i++){
             game.getP1Houses().get(i).setPebbles(0);
             game.getP2Houses().get(i).setPebbles(0);
         }
         assertTrue(!game.canPlay());
         assertTrue(game.getStoreCount(0) == game.getStoreCount(1));
+        assertTrue(p1.hasTie());
         assertTrue(!p1.hasWon() && !p2.hasWon()); // they both tied, meaning they both haven't won
     }
 
