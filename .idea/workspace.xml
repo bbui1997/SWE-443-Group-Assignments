@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c11e456-d4a5-4df8-898b-e7fb888fcf4a" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/House.class" afterPath="$PROJECT_DIR$/build/classes/main/House.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/MancalaGame.class" afterPath="$PROJECT_DIR$/build/classes/main/MancalaGame.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Player.class" afterPath="$PROJECT_DIR$/build/classes/main/Player.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mancala/src/main/java/GameClient.java" afterPath="$PROJECT_DIR$/mancala/src/main/java/GameClient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mancala/src/main/java/House.java" afterPath="$PROJECT_DIR$/mancala/src/main/java/House.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mancala/src/main/java/MancalaGame.java" afterPath="$PROJECT_DIR$/mancala/src/main/java/MancalaGame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mancala/src/main/java/Player.java" afterPath="$PROJECT_DIR$/mancala/src/main/java/Player.java" />
     </list>
     <ignored path="SWE-443-Group-Assignments.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -89,8 +89,8 @@
       <file leaf-file-name="GameClient.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mancala/src/main/java/GameClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="85" column="5" lean-forward="true" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
+            <state relative-caret-position="340">
+              <caret line="20" column="34" lean-forward="true" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -1198,7 +1198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1489949266715</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Created GameClient, Network Logic, and GUI">
+      <created>1489959770097</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1489959770097</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1306,7 +1313,8 @@
     <MESSAGE value="Fixed a bug where you could redistribute an empty house" />
     <MESSAGE value="small changes in MancalaGame" />
     <MESSAGE value="network logic in process (push test)" />
-    <option name="LAST_COMMIT_MESSAGE" value="network logic in process (push test)" />
+    <MESSAGE value="Created GameClient, Network Logic, and GUI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created GameClient, Network Logic, and GUI" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1679,8 +1687,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mancala/src/main/java/GameClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="85" column="5" lean-forward="true" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
+        <state relative-caret-position="340">
+          <caret line="20" column="34" lean-forward="true" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />

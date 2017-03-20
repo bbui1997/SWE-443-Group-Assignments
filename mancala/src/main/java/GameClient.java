@@ -18,10 +18,17 @@ public class GameClient {
     public static Player p2;
     public static PrintWriter out;
     public static BufferedReader in;
+    public static int port = 1337;
+    public static String address = "";
+
 
     public static void main(String[] args){
         //prepare to receive user input
         scan = new Scanner(System.in);
+        if (args.length > 0) {
+            address = args[0];
+            System.out.println("ADDRESS: " + address);
+        }
 
         //Game Splash, Player Selection, Host/Client selection
         boolean done = false;
@@ -46,6 +53,7 @@ public class GameClient {
             }
 
         }
+        showInstructions();
         //host/client setup logic
         try {
            sock = isHost ? setupHost() : setupClient();
@@ -54,7 +62,7 @@ public class GameClient {
            in = new BufferedReader(new InputStreamReader(sock.getInputStream()));
            //network issues
         }catch (Exception e){
-            System.out.println("Network issue. Cannot resolve.");
+            System.out.println("Network issue. Cannot resolve." + e.toString());
             return;
         }
 
@@ -87,7 +95,6 @@ public class GameClient {
 
     public static Socket setupHost() throws Exception{
         //setup host logic
-        int port = 1337;
         int backlog = 3;
         InetAddress addr = InetAddress.getLocalHost();
         System.out.println("HOST: opening socket on addr:port " + addr + ":" + port);
@@ -97,10 +104,15 @@ public class GameClient {
 
     public static Socket setupClient() throws Exception{
         //setup client logic
-        int port = 1337;
-        InetAddress addr = InetAddress.getLocalHost();
-        System.out.println("CLIENT: connecting to addr:port "+addr+":"+port);
-        return new Socket(addr, port);
+        if(!address.equals("")){
+            System.out.println("CLIENT: connecting to addr:port " + address + ":" + port);
+            return new Socket(address,port);
+        }
+        else {
+            InetAddress addr = InetAddress.getLocalHost();
+            System.out.println("CLIENT: connecting to addr:port " + addr + ":" + port);
+            return new Socket(addr, port);
+        }
 
     }
 
@@ -109,13 +121,13 @@ public class GameClient {
         //Top half of the board
         StringBuilder s = new StringBuilder("[P1] | " );
         s.append(flipP1(game.getP1Houses()));
-        s.append("| [P2]\n ");
+        s.append("| \n ");
         s.append(String.format("%2d",game.getP1Store().getPebbles())); //accounting for 2 digits
         s.append("  |             |  ");
         s.append(String.format("%2d",game.getP2Store().getPebbles())); //accounting for 2 digits
         s.append("\n     | ");
         s.append(printP2(game.getP2Houses()));
-        s.append("|");
+        s.append("| [P2]");
         System.out.println(s.toString());
     }
 
@@ -188,7 +200,16 @@ public class GameClient {
         return false;
     }
 
+    public static void showInstructions(){
+        System.out.println("Welcome to our Mancala Game");
+        System.out.println("We are using a text-based GUI");
+        System.out.println("You will see a board that looks like this:");
+        System.out.println("  | x x x x x x |  ");
+        System.out.println("  | 0 1 2 3 4 5 | <-- These numbers won't be here, but no matter what player you are");
+        System.out.println("  | x x x x x x |     that number corresponds to that house, keep in mind that the ");
+        System.out.println("                      game is played counter clockwise. ");
 
+    }
 
 
 }
