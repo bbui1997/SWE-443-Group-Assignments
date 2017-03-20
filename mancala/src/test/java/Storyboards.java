@@ -49,10 +49,10 @@ public class Storyboards {
        }
 
        for (House h : mancalaGame.getP1Houses()){
-           h.setPebbles(6);
+           h.setPebbles(0);
        }
 
-       mancalaGame.getP1Houses().get(0).redistributeCounterClockwise();
+       mancalaGame.getP1Houses().get(0).getStore().setPebbles(36);
        storyboard.addCode();
 
        storyboard.addObjectDiagramOnlyWith(mancalaGame,jess);
@@ -254,9 +254,16 @@ public class Storyboards {
         storyboard.assertEquals("Jess's House 6: ",0,game.getP2Houses().get(5).getPebbles());
         storyboard.assertEquals("Jess's Store:",16,game.getStoreCount(jess.getPlayerNumber()));
         //==================================================
-        storyboard.add("6.Jeff wins the game with 20 pebbles in his store.");
-
+        storyboard.add("6.Jeff incorrectly wins the game with 20 pebbles in his store.");
         storyboard.markCodeStart();
+
+        game.getP1Houses().get(0).setPebbles(0);
+        game.getP1Houses().get(1).setPebbles(0);
+        game.getP1Houses().get(2).setPebbles(0);
+        game.getP1Houses().get(3).setPebbles(0);
+        game.getP1Houses().get(4).setPebbles(0);
+        game.getP1Houses().get(5).setPebbles(0);
+        game.getP1Houses().get(0).getStore().setPebbles(20);
 
         storyboard.addCode();
         storyboard.addObjectDiagramOnlyWith(game,jeff);

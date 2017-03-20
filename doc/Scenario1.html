@@ -40,10 +40,10 @@
        }
 
        for (House h : mancalaGame.getP1Houses()){
-           h.setPebbles(6);
+           h.setPebbles(0);
        }
 
-       mancalaGame.getP1Houses().get(0).redistributeCounterClockwise();
+       mancalaGame.getP1Houses().get(0).getStore().setPebbles(36);
 </pre><script>
    var json = {
    "typ":"objectdiagram",

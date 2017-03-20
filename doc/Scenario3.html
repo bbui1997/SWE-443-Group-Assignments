@@ -119,8 +119,16 @@
 <p>Check: Jess's House 5:  0 actual 0</p>
 <p>Check: Jess's House 6:  0 actual 0</p>
 <p>Check: Jess's Store: 16 actual 16</p>
-<p>6.Jeff wins the game with 20 pebbles in his store.</p>
+<p>6.Jeff incorrectly wins the game with 20 pebbles in his store.</p>
 <pre>
+        game.getP1Houses().get(0).setPebbles(0);
+        game.getP1Houses().get(1).setPebbles(0);
+        game.getP1Houses().get(2).setPebbles(0);
+        game.getP1Houses().get(3).setPebbles(0);
+        game.getP1Houses().get(4).setPebbles(0);
+        game.getP1Houses().get(5).setPebbles(0);
+        game.getP1Houses().get(0).getStore().setPebbles(20);
+       
 </pre><script>
    var json = {
    "typ":"objectdiagram",

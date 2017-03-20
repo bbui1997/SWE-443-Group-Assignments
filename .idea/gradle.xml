@@ -4,18 +4,6 @@
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$USER_HOME$/Desktop/CS 443/Assignment 4/SWE-443-Group-Assignments" />
-        <option name="modules">
-          <set>
-            <option value="$USER_HOME$/Desktop/CS 443/Assignment 4/SWE-443-Group-Assignments" />
-            <option value="$USER_HOME$/Desktop/CS 443/Assignment 4/SWE-443-Group-Assignments/mancala" />
-            <option value="$USER_HOME$/Desktop/CS 443/Assignment 4/SWE-443-Group-Assignments/towerofhanoi" />
-          </set>
-        </option>
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="createEmptyContentRootDirectories" value="true" />
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="gradleJvm" value="1.8" />
         <option name="modules">
