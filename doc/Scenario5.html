@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<link href="includes/diagramstyle.css" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="includes/dagre.min.js"></script>
+<script src="includes/drawer.js"></script>
+<script src="includes/graph.js"></script>
+</head><body>
+<p>Storyboard <a href='.././mancala/src/test/java/Storyboards.java' type='text/x-java'>Scenario5</a></p>
+<p>1.Alex and Jess setup the board to play.</p>
+<pre>
+        MancalaGame game = new MancalaGame(6);
+
+        Player jess = new Player();
+        jess.setName(&quot;Jess&quot;);
+        jess.setGame(game);
+
+        Player alex =  new Player();
+        alex.setName(&quot;Alex&quot;);
+        alex.setGame(game);
+
+</pre><script>
+   var json = {
+   "typ":"objectdiagram",
+   "nodes":null
+}   ;
+   json["options"]={"canvasid":"canvasScenario53", "display":"svg", "fontsize":10,"bar":true};   var g = new Graph(json);
+   g.layout(100,100);
+</script>
+<p>Check: Jess is a player true</p>
+<p>Check: Alex is a player true</p>
+<p>2.It's Alex's turn. Alex redistributes his first 3 pebbles. His board state is: 3,3,3,3,3,0. His store contains 1 pebble.</p>
+<pre>        game.setCurrentTurn(alex.getPlayerNumber());
+        game.getP2Houses().get(5).redistributeCounterClockwise();
+
+</pre><script>
+   var json = {
+   "typ":"objectdiagram",
+   "nodes":null
+}   ;
+   json["options"]={"canvasid":"canvasScenario58", "display":"svg", "fontsize":10,"bar":true};   var g = new Graph(json);
+   g.layout(100,100);
+</script>
+<p>Check: Alex's House 1: 3 actual 3</p>
+<p>Check: Alex's House 2: 3 actual 3</p>
+<p>Check: Alex's House 3: 3 actual 3</p>
+<p>Check: Alex's House 4: 3 actual 3</p>
+<p>Check: Alex's House 5: 3 actual 3</p>
+<p>Check: Alex's House 6: 0 actual 0</p>
+<p>Check: Alex's Store: 1 actual 1</p>
+<p>3.It's Jess's turn. Jess redistributes her last 3 pebbles in her row. Jess’s board state is 4,4,3,3,3,0. Her store contains 1 pebble.</p>
+<pre>        game.setCurrentTurn(jess.getPlayerNumber());
+        game.getP1Houses().get(5).redistributeCounterClockwise();
+</pre><script>
+   var json = {
+   "typ":"objectdiagram",
+   "nodes":null
+}   ;
+   json["options"]={"canvasid":"canvasScenario518", "display":"svg", "fontsize":10,"bar":true};   var g = new Graph(json);
+   g.layout(100,100);
+</script>
+<p>Check: Jess's House 1: 4 actual 4</p>
+<p>Check: Jess's House 2: 4 actual 4</p>
+<p>Check: Jess's House 3: 3 actual 3</p>
+<p>Check: Jess's House 4: 3 actual 3</p>
+<p>Check: Jess's House 5: 3 actual 3</p>
+<p>Check: Jess's House 6: 0 actual 0</p>
+<p>Check: Jess's Store: 1 actual 1</p>
+<p>4.It's Alex's turn. Alex redistributes the one pebble from his store to Jess's House 1. His board state is 0,3,3,3,4,4. His store contains 0 pebbles.</p>
+<pre>        game.setCurrentTurn(alex.getPlayerNumber());
+        game.getP1Houses().get(0).setPebbles(
+                game.getP1Houses().get(0).getPebbles()+game.getP2Houses().get(0).getStore().getPebbles());
+        game.getP2Houses().get(0).getStore().setPebbles(0);
+</pre><script>
+   var json = {
+   "typ":"objectdiagram",
+   "nodes":null
+}   ;
+   json["options"]={"canvasid":"canvasScenario528", "display":"svg", "fontsize":10,"bar":true};   var g = new Graph(json);
+   g.layout(100,100);
+</script>
+<p>Check: Alex's House 1: 4 actual 4</p>
+<p>Check: Alex's House 2: 4 actual 4</p>
+<p>Check: Alex's House 3: 3 actual 3</p>
+<p>Check: Alex's House 4: 3 actual 3</p>
+<p>Check: Alex's House 5: 3 actual 3</p>
+<p>Check: Alex's House 6: 0 actual 0</p>
+<p>Check: Alex's Store: 0 actual 0</p>
+<p>5.It's Jess's turn. Jess redistributes the one pebble from her store to Alex's House 1. Her board state is 5,4,3,3,3,0. Her store contains 0 pebbles.</p>
+<pre>        game.setCurrentTurn(jess.getPlayerNumber());
+        game.getP2Houses().get(0).setPebbles(
+               game.getP2Houses().get(0).getPebbles()+game.getP1Houses().get(0).getStore().getPebbles());
+        game.getP1Houses().get(0).getStore().setPebbles(0);
+</pre><script>
+   var json = {
+   "typ":"objectdiagram",
+   "nodes":null
+}   ;
+   json["options"]={"canvasid":"canvasScenario538", "display":"svg", "fontsize":10,"bar":true};   var g = new Graph(json);
+   g.layout(100,100);
+</script>
+<p>Check: Jess's House 1: 5 actual 5</p>
+<p>Check: Jess's House 2: 4 actual 4</p>
+<p>Check: Jess's House 3: 3 actual 3</p>
+<p>Check: Jess's House 4: 3 actual 3</p>
+<p>Check: Jess's House 5: 3 actual 3</p>
+<p>Check: Jess's House 6: 0 actual 0</p>
+<p>Check: Jess's Store: 0 actual 0</p>
+<p>6.Jess and Alex leave the game after an unsuccessful attempt.</p>
+<pre>        game.removePlayer(jess);
+        game.removePlayer(alex);
+</pre><script>
+   var json = {
+   "typ":"objectdiagram",
+   "nodes":null
+}   ;
+   json["options"]={"canvasid":"canvasScenario548", "display":"svg", "fontsize":10,"bar":true};   var g = new Graph(json);
+   g.layout(100,100);
+</script>
+<p>Check: Jess and Alex left the game: true</p>
+
+</body>
+</html>

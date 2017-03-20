@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<link href="includes/diagramstyle.css" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="includes/dagre.min.js"></script>
+<script src="includes/drawer.js"></script>
+<script src="includes/graph.js"></script>
+</head><body>
+<p>Storyboard <a href='.././mancala/src/test/java/Storyboards.java' type='text/x-java'>Scenario1</a></p>
+<p>1. (initial setup) Jess and Alex sit down to play mancala with 0 stones in their store</p>
+<pre>       MancalaGame mancalaGame  = new MancalaGame(6);
+
+       Player jess = new Player();
+       jess.setName(&quot;Jess&quot;);
+       jess.setGame(mancalaGame);
+
+       Player alex = new Player();
+       alex.setName(&quot;Alex&quot;);
+       alex.setGame(mancalaGame);
+
+</pre><script>
+   var json = {
+   "typ":"objectdiagram",
+   "nodes":null
+}   ;
+   json["options"]={"canvasid":"canvasScenario13", "display":"svg", "fontsize":10,"bar":true};   var g = new Graph(json);
+   g.layout(100,100);
+</script>
+<p>Check: Jess' store:  0 actual 0</p>
+<p>Check: Alex's store:  0 actual 0</p>
+<p>2. Jess grabs all 36 pebbles and places them into her store</p>
+<pre>
+       for (House h : mancalaGame.getP2Houses()) {
+           h.setPebbles(0);
+       }
+
+       for (House h : mancalaGame.getP1Houses()){
+           h.setPebbles(6);
+       }
+
+       mancalaGame.getP1Houses().get(0).redistributeCounterClockwise();
+</pre><script>
+   var json = {
+   "typ":"objectdiagram",
+   "nodes":null
+}   ;
+   json["options"]={"canvasid":"canvasScenario18", "display":"svg", "fontsize":10,"bar":true};   var g = new Graph(json);
+   g.layout(100,100);
+</script>
+<p>Check: Jess' store:  36 actual 36</p>
+<p>Check: Alex's store:  0 actual 0</p>
+
+</body>
+</html>
