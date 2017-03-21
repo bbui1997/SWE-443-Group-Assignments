@@ -13,6 +13,7 @@ import java.util.Scanner;
 
 public class GameClient {
 
+    //Class variables for the network setup
     public static Scanner scan;
     public static Socket sock;
     public static boolean isHost;
@@ -21,13 +22,16 @@ public class GameClient {
     public static Player p2;
     public static PrintWriter out;
     public static BufferedReader in;
-    public static int port = 1337;
+    public static int port = 1337;  //hard coded port at 1337
     public static String address = "";
 
 
     public static void main(String[] args) {
         //prepare to receive user input
         scan = new Scanner(System.in);
+        //This code enables actual network play
+        //passing an IP address argument allows two players to play over a network
+        //Note this will not be possible on the Mason Network due to security blocks
         if (args.length > 0) {
             address = args[0];
             System.out.println("ADDRESS: " + address);
@@ -65,12 +69,12 @@ public class GameClient {
             in = new BufferedReader(new InputStreamReader(sock.getInputStream()));
             //network issues
         } catch (Exception e) {
-            System.out.println("Network issue. Cannot resolve." + e.toString());
+            System.out.println("Network issue. Cannot resolve. " + e.toString());
             return;
         }
 
         //no network issues. Make the game board
-        game = new MancalaGame(6);
+        game = new MancalaGame(6);  //can be played with more than 6 but the graphics are set up for 6
         //make the players and add to game
         p1 = new Player();
         p2 = new Player();
@@ -81,6 +85,7 @@ public class GameClient {
         System.out.println(isHost ? "You are Player 1" : "You are Player 2");
 
         //Game loop
+        //Print the board, get the turn, take a turn or receive a turn
         while (!gameOver()) {
             printBoard();
             if ((game.getPlayerTurn() == 0 && isHost) || (game.getPlayerTurn() == 1 && !isHost)) {
@@ -117,7 +122,7 @@ public class GameClient {
 
     //Print the state of the board to the use (Command Line GUI)
     public static void printBoard() {
-        //Top half of the board
+        //Use Stringbuilder to make it pretty
         StringBuilder s = new StringBuilder("[P1] | ");
         s.append(flipP1(game.getP1Houses()));
         s.append("| \n ");
@@ -130,6 +135,7 @@ public class GameClient {
         System.out.println(s.toString());
     }
 
+    //Preserves the counter clockwise design
     public static String flipP1(List<House> l) {
         String s = "";
         for (House h : l) {
@@ -137,7 +143,7 @@ public class GameClient {
         }
         return s;
     }
-
+    //doesn't need to be flipped
     public static String printP2(List<House> l) {
         String s = "";
         for (House h : l) {
@@ -145,14 +151,17 @@ public class GameClient {
         }
         return s;
     }
-
+    //Handles the turn system
+    //most of the logic is in redistribute function
     public static void takeTurn() {
         System.out.println("Your Turn");
         //handles invalid moves
         boolean done = false;
         int i = 0;
         while (!done) {
-            //Player picks a house
+            //Player picks a house to redistribute
+            //Note that no matter what side of the board the user is on, they will select 0-5
+            //this was done on purpose to preserve the user mental model
             System.out.println("Choose a house 0-5 to redistribute:");
             try {
                 i = isHost ? 5 - scan.nextInt() : scan.nextInt();
@@ -167,6 +176,7 @@ public class GameClient {
                 printBoard();
                 takeTurn();
             }
+            //actual turn logic here
             if (isHost) {
                 done = game.getP1Houses().get(i).redistributeCounterClockwise(); //take your turn
             } else {
@@ -177,6 +187,7 @@ public class GameClient {
         out.println(i);
     }
 
+    //receive turn logic
     public static void receiveTurn() {
         int i = 0;
         try {
@@ -194,27 +205,35 @@ public class GameClient {
 
     //check if game is over and who won
     public static boolean gameOver() {
+       //no plays means game is over
+        //check who won
         if (!game.canPlay()) {
             System.out.println("\nGame Over!");
+            //P1 wins
             if (p1.hasWon()) {
                 printBoard();
                 System.out.println(isHost ? "You Won!" : "You Lost!");
                 return true;
             }
+            //P2 wins
             if (p2.hasWon()) {
                 printBoard();
                 System.out.println(isHost ? "You Lost!" : "You Won!");
                 return true;
             }
+            //Tie
             if (p1.hasTie()) {
                 printBoard();
                 System.out.println("Tie!");
                 return true;
             }
         }
+        //Game isn't actually over
         return false;
     }
 
+    //Instruction menu for the user
+    //Printed before the game starts (after player selection)
     public static void showInstructions() {
         System.out.println("Welcome to our Mancala Game");
         System.out.println("We are using a text-based GUI");
