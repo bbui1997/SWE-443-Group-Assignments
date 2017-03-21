@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<link href="includes/diagramstyle.css" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="includes/dagre.min.js"></script>
+<script src="includes/drawer.js"></script>
+<script src="includes/graph.js"></script>
+</head><body>
+<p>Storyboard <a href='.././mancala/src/main/java/Model.java' type='text/x-java'>Model</a></p>
+<p>Mancala Class Diagram</p>
+<script>
+   var json = {
+   "typ":"class",
+   "nodes":[
+      {
+         "typ":"node",
+         "id":"Player",
+         "attributes":[
+            "name : String"
+         ]
+      },
+      {
+         "typ":"node",
+         "id":"MancalaGame",
+         "methods":[
+            "makeBoard(int x)"
+         ]
+      },
+      {
+         "typ":"node",
+         "id":"House",
+         "attributes":[
+            "pebbles : int",
+            "isStore : boolean"
+         ],
+         "methods":[
+            "takeOppositePebbles()",
+            "redistributeCounterClockwise()",
+            "redistributeCounterClockwiseRecurse(int x, Object p1)"
+         ]
+      }
+   ],
+   "edges":[
+      {
+         "typ":"ASSOCIATION",
+         "source":{
+            "id":"Player",
+            "cardinality":"many",
+            "property":"players"
+         },
+         "target":{
+            "id":"MancalaGame",
+            "cardinality":"one",
+            "property":"game"
+         }
+      },
+      {
+         "typ":"ASSOCIATION",
+         "source":{
+            "id":"MancalaGame",
+            "cardinality":"one",
+            "property":"game"
+         },
+         "target":{
+            "id":"House",
+            "cardinality":"many",
+            "property":"p1Houses"
+         }
+      },
+      {
+         "typ":"ASSOCIATION",
+         "source":{
+            "id":"MancalaGame",
+            "cardinality":"one",
+            "property":"game"
+         },
+         "target":{
+            "id":"House",
+            "cardinality":"many",
+            "property":"p2Houses"
+         }
+      },
+      {
+         "typ":"ASSOCIATION",
+         "source":{
+            "id":"MancalaGame",
+            "cardinality":"one",
+            "property":"game"
+         },
+         "target":{
+            "id":"House",
+            "cardinality":"one",
+            "property":"p1Store"
+         }
+      },
+      {
+         "typ":"ASSOCIATION",
+         "source":{
+            "id":"MancalaGame",
+            "cardinality":"one",
+            "property":"game"
+         },
+         "target":{
+            "id":"House",
+            "cardinality":"one",
+            "property":"p2Store"
+         }
+      },
+      {
+         "typ":"ASSOCIATION",
+         "source":{
+            "id":"House",
+            "cardinality":"one",
+            "property":"houseAcross"
+         },
+         "target":{
+            "id":"House",
+            "cardinality":"one",
+            "property":"house"
+         }
+      },
+      {
+         "typ":"ASSOCIATION",
+         "source":{
+            "id":"House",
+            "cardinality":"one",
+            "property":"houseNext"
+         },
+         "target":{
+            "id":"House",
+            "cardinality":"one",
+            "property":"housePrev"
+         }
+      }
+   ]
+}   ;
+   new Graph(json, {"canvasid":"canvasModelClassDiagram1", "display":"html", fontsize:10, bar:false, propertyinfo:false}).layout(100,100);
+</script>
+
+</body>
+</html>

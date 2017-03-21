@@ -43,3 +43,7 @@
 
 # vi
 */*.swp
+
+.idea/workspace.xml
+
+build/classes/main/House.class

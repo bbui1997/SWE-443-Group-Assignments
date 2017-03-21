@@ -27,7 +27,7 @@ public class Model {
                 .withAttribute("isStore", DataType.BOOLEAN)
                 .withMethod("takeOppositePebbles", DataType.VOID)
                 .withMethod("redistributeCounterClockwise", DataType.VOID)
-                .withMethod("redistributeCounterClockwiseRecurse", DataType.VOID, new Parameter(DataType.INT).with("x"), new Parameter(DataType.OBJECT)).with("house");
+                .withMethod("redistributeCounterClockwiseRecurse", DataType.VOID, new Parameter(DataType.INT).with("x"), new Parameter(DataType.OBJECT)).with("House");
 
         // Bidirectional Association Declaration
         houseClass.withBidirectional(houseClass, "houseAcross", Cardinality.ONE, "house", Cardinality.ONE);
@@ -39,8 +39,8 @@ public class Model {
         mancalaClass.withBidirectional(houseClass, "p1Store", Cardinality.ONE, "game", Cardinality.ONE);
         mancalaClass.withBidirectional(houseClass, "p2Store", Cardinality.ONE, "game", Cardinality.ONE);
 
-        model.generate();
-/*
+        //model.generate();
+
         // Visualize
         Storyboard storyboard = new Storyboard();
         storyboard.add("Mancala Class Diagram");
@@ -48,6 +48,6 @@ public class Model {
 
         model.generate();
         storyboard.dumpHTML();
-        */
+
     }
 }
